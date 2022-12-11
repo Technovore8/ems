@@ -115,8 +115,10 @@ Route::get('/location-delete/{id}',[LocationController::class,'delete'])->name('
 #booking
 Route::get('/booking-create',[BookingController::class,'create'])->name('backend.booking.create');
 Route::get('/booking-index',[BookingController::class,'index'])->name('backend.booking.index');
-Route::get('/booking-edit',[BookingController::class,'edit'])->name('backend.booking.edit');
-
+Route::post('/booking-store',[BookingController::class,'store'])->name('backend.booking.store');
+Route::get('/booking-edit/{id}',[BookingController::class,'edit'])->name('backend.booking.edit');
+Route::put('/booking-update/{id}',[BookingController::class,'update'])->name('backend.booking.update');
+Route::get('/booking-delete/{id}',[BookingController::class,'delete'])->name('backend.booking.delete');
 
 #schedule
 Route::get('/schedule-create',[ScheduleController::class,'create'])->name('backend.schedule.create');
@@ -142,7 +144,6 @@ Route::post('/property-store',[PropertyController::class,'store'])->name('backen
 Route::get('/property-edit/{id}',[PropertyController::class,'edit'])->name('backend.property.edit');
 Route::put('/property-update/{id}',[PropertyController::class,'update'])->name('backend.property.update');
 Route::get('/Property-delete/{id}',[PropertyController::class,'delete'])->name('backend.property.delete');
-
 
 
 

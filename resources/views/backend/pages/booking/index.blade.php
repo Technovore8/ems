@@ -1,32 +1,27 @@
-<h1>booking index</h1>
 @extends('backend.master')
 @section('content')
-<h1>User List</h1>
-<a href="{{route('backend.user.create')}}"><button class="btn btn-success">Add user +</button></a>
+<h1>Booking List</h1>
+<a href="{{route('backend.booking.create')}}"><button class="btn btn-success">Book property +</button></a>
 <body>
 <table class="table">
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Name</th>
-      <th scope="col">Image</th>
-      <th scope="col">address</th>
-      <th scope="col">email</th>
-      <th scope="col">Action</th>   
+      <th scope="col">User</th>
+      <th scope="col">Property</th>
+      
     </tr>
   </thead>
   <tbody>
-    @foreach($users as $data)
+    @foreach($book as $data)
     <tr>
       <th scope="row">{{$data->id}}</th>
-      <td>{{$data->name}}</td>
-      <td><img src="{{url('/uploads/'.$data->image)}}" alt=""></td>
-      <td>{{$data->address}}</td>
-      <td>{{$data->email}}</td>  
+      <td>{{$data->user->name}}</td>
+      <td>{{$data->property->name}}</td>
       <td>
       <a href=""><button type="button" class="btn btn-success">View</button></a>
-      <a href=""><button type="button" class="btn btn-primary">Edit</button></a>
-      <a href=""><button type="button" class="btn btn-danger">Delete</button></a>
+      <a href="{{route('backend.booking.edit',$data->id)}}"><button type="button" class="btn btn-primary">Edit</button></a>
+      <a href="{{route('backend.booking.delete',$data->id)}}"><button type="button" class="btn btn-danger">Delete</button></a>
       </td> 
     </tr>
   @endforeach
