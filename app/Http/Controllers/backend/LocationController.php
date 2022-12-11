@@ -34,6 +34,27 @@ class LocationController extends Controller
     $location=Location::find($id);
     return view('backend.pages.location.edit',compact('location'));
     }
+    public function update(Request $request,$id){
+        $request->validate([
+            'name'=>'required'
+        ]);
+        $location=Location::find($id);
+        $filename=null;
+        if($request->hasFile('image')){
+            $file=$request->file('image');
+            $filename=date('Ymdhis').'.'.$file->getClientOriginalExtension();
+            $file->storeAs('/uploads',$filename);
+        }
+        $location->update([
+            'name'=>$request->name,
+
+        ]);
+        return redirect()->route('backend.location.index');
+    }
+    public function delete($id){
+        $location=Location::find($id)->delete();
+        return redirect()->route('backend.location.index');
+    }
 
 }
 

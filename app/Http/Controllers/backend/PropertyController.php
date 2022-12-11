@@ -52,4 +52,25 @@ class PropertyController extends Controller
         $property=Property::with('location','project')->find($id);
         return view('backend.pages.property.edit',compact('property','location','project'));
     }
+    public function update(Request $request,$id){
+      $request->validate([
+        'name'=>'required',
+      ]);  
+      $user=User::find($id);
+      $filename=null;
+      if($request->hasFile('image')){
+          $file=$request->file('image');
+          $filename=date('Ymdhis').'.'.$file->getClientOriginalExtension();
+          $file->storeAs('/uploads',$filename);
+      }
+      $project->update([
+        'name'=>$request->name
+      ]);
+      return redirect()->route('backend.property.index');
+
+    }
+    public function delete($id){
+        $property=Property::find($id)->delete();
+        return redirect()->route('backend.property.index');
+    }
 }

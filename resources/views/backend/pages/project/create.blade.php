@@ -4,7 +4,8 @@
 
 <h1>Add a project</h1>
 <form action="{{route('backend.project.store')}}" method="post" enctype="multipart/form-data">
-  @csrf
+  
+@csrf
     <div class="form-group">
         <label for="name">Name</label>
         <input type="text" class="form-control" id="name" name="name" placeholder="Enter project name">

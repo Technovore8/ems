@@ -2,7 +2,8 @@
 @section('content')
 
 <h1>Update an user</h1>
-<form action="#" method="post" enctype="multipart/form-data">
+<form action="{{route('backend.location.update',$location->id)}}" method="post" enctype="multipart/form-data">
+  @method('put')
   @csrf
     <div class="form-group">
         <label for="name">Name</label>

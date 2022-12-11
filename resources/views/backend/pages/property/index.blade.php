@@ -29,7 +29,7 @@
       <td>
       <a href=""><button type="button" class="btn btn-success">View</button></a>
       <a href="{{route('backend.property.edit',$data->id)}}"><button type="button" class="btn btn-primary">Edit</button></a>
-      <a href=""><button type="button" class="btn btn-danger">Delete</button></a>
+      <a href="{{route('backend.property.delete',$data->id)}}"><button type="button" class="btn btn-danger" onclick="return confirm('Are you sure to delete?')">Delete</button></a>
       </td>   
     </tr>
   @endforeach

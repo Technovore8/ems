@@ -107,6 +107,10 @@ Route::get('/location-create',[LocationController::class,'create'])->name('backe
 Route::get('/location-index',[LocationController::class,'index'])->name('backend.location.index');
 Route::post('/location-store',[LocationController::class,'store'])->name('backend.location.store');
 Route::get('/location-edit/{id}',[LocationController::class,'edit'])->name('backend.location.edit');
+Route::put('/location-update/{id}',[LocationController::class,'update'])->name('backend.location.update');
+Route::get('/location-delete/{id}',[LocationController::class,'delete'])->name('backend.location.delete');
+
+
 
 #booking
 Route::get('/booking-create',[BookingController::class,'create'])->name('backend.booking.create');
@@ -125,6 +129,10 @@ Route::get('/project-create',[ProjectController::class,'create'])->name('backend
 Route::get('/project-index',[ProjectController::class,'index'])->name('backend.project.index');
 Route::post('/project-store',[ProjectController::class,'store'])->name('backend.project.store');
 Route::get('/project-edit/{id}',[ProjectController::class,'edit'])->name('backend.project.edit');
+Route::put('/project-update/{id}',[ProjectController::class,'update'])->name('backend.project.update');
+Route::get('/project-delete/{id}',[ProjectController::class,'delete'])->name('backend.project.delete');
+
+
 
 
 #property
@@ -132,6 +140,8 @@ Route::get('/property-create',[PropertyController::class,'create'])->name('backe
 Route::get('/property-index',[PropertyController::class,'index'])->name('backend.property.index');
 Route::post('/property-store',[PropertyController::class,'store'])->name('backend.property.store');
 Route::get('/property-edit/{id}',[PropertyController::class,'edit'])->name('backend.property.edit');
+Route::put('/property-update/{id}',[PropertyController::class,'update'])->name('backend.property.update');
+Route::get('/Property-delete/{id}',[PropertyController::class,'delete'])->name('backend.property.delete');
 
 
 

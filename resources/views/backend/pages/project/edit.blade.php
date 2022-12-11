@@ -2,8 +2,9 @@
 @section('content')
 
 <h1>Update an user</h1>
-<form action="#" method="post" enctype="multipart/form-data">
-  @csrf
+<form action="{{route('backend.project.update',$project->id)}}" method="post" enctype="multipart/form-data">
+@method('put')  
+@csrf
     <div class="form-group">
         <label for="name">Name</label>
         <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name" value="{{old('name',$project->name)}}">

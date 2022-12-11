@@ -44,4 +44,29 @@ class ProjectController extends Controller
     $project=Project::find($id);
     return view('backend.pages.project.edit',compact('project'));
     }
+    public function update(Request $request,$id){
+        $request->validate([
+            'name'=>'required',
+            'address'=>'required',
+            'details'=>'required'
+        ]);
+        $project=Project::find($id);
+        $filename=null;
+        if($request->hasFile('image')){
+            $file=$request->file('image');
+            $filename=date('Ymdhis').'.'.$file->getClientOriginalExtension();
+            $file->storeAs('/uploads',$filename);
+        }
+        $project->update([
+            'name'=>$request->$name,
+            'address'=>$request->$address,
+            'details'=>$request->$details
+        ]);
+        return redirect()->route('backend.project.index');
+    }
+    public function delete($id){
+        $project=Project::find($id)->delete();
+        return redirect()->route('backend.project.index');
+
+    }
 }
