@@ -27,6 +27,8 @@
               <li><a href="{{route('aboutus')}}">About</a></li>
               <li><a href="{{route('contactus'))">Contact Us</a></li>
               <li><a href="contact.html">Search</a></li>
+              <li><a href="contact.html">Login</a></li>
+
             </ul>
 
             <a

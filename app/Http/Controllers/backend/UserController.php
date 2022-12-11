@@ -35,7 +35,7 @@ class UserController extends Controller
             'name'=>$request->name,
             'email'=>$request->email,
             'address'=>$request->address,
-            'password'=>$request->password,
+            'password'=>bcrypt($request->password),
             'image'=>$filename,
         ]);
         return redirect()->route('backend.user.index');
