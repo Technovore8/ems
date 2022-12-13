@@ -21,4 +21,7 @@ class AuthController extends Controller
             return redirect()->back();
         }
     }
+    public function registration(){
+        return view('frontend.pages.registration.registration');
+    }
 }

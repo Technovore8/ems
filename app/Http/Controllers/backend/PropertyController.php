@@ -23,9 +23,11 @@ class PropertyController extends Controller
     }
     
     public function store(Request $request){
-  
+       // dd($request);
         $request->validate([
             'name'=>'required',
+            'price'=>'required',
+            'details'=>'required'
         ]);
     //    dd($request);
         $filename=null;
@@ -42,6 +44,7 @@ class PropertyController extends Controller
         'details'=>$request->details,
         'slug'=>Str::slug($request->name),
         'image'=>$filename,
+        'price'=>$request->price,
 ]);
         return redirect()->route('backend.property.index');
     }
@@ -56,7 +59,7 @@ class PropertyController extends Controller
       $request->validate([
         'name'=>'required',
       ]);  
-      $user=User::find($id);
+      $property=Property::find($id);
       $filename=null;
       if($request->hasFile('image')){
           $file=$request->file('image');
@@ -64,7 +67,13 @@ class PropertyController extends Controller
           $file->storeAs('/uploads',$filename);
       }
       $project->update([
-        'name'=>$request->name
+        'name'=>$request->name,
+        'location_id'=>$request->location_id,
+        'project_id'=>$request->project_id,
+        'details'=>$request->details,
+        'slug'=>Str::slug($request->name),
+        'image'=>$filename,
+        'price'=>$request->price,
       ]);
       return redirect()->route('backend.property.index');
 

@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('details');
             $table->string('image')->nullable();
             $table->string('status')->default('active');
+            $table->integer('price');
             $table->string('slug')->nullable();
             $table->timestamps();
         });

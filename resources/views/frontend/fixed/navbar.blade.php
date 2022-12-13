@@ -25,9 +25,9 @@
               </li>
               <li><a href="{{route('services')}}">Services</a></li>
               <li><a href="{{route('aboutus')}}">About</a></li>
-              <li><a href="{{route('contactus')}}">Contact Us</a></li>
-              <li><a href="">Search</a></li>
-              <li><a href="{{ route('login') }}">Login</a></li>
+              <li><a href="{{route('contactus'))">Contact Us</a></li>
+              <li><a href="contact.html">Search</a></li>
+              <li><a href="contact.html">Login</a></li>
 
             </ul>
 
