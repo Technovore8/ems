@@ -53,15 +53,8 @@
                 <a href="{{route('properties')}}">Properties</a>
                 <ul class="dropdown">
                   <li><a href="{{route('buyproperties')}}">Buy Property</a></li>
-                  <li><a href="#">Sell Property</a></li>
-                  <li class="has-children">
-                    <a href="#">Dropdown</a>
-                    <ul class="dropdown">
-                      <li><a href="#">Sub Menu One</a></li>
-                      <li><a href="#">Sub Menu Two</a></li>
-                      <li><a href="#">Sub Menu Three</a></li>
-                    </ul>
-                  </li>
+                  <li><a href="{{route('sellproperties')}}">Sell Property</a></li>
+                  
                 </ul>
               </li>
               <li><a href="{{route('services')}}">Services</a></li>

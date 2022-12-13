@@ -9,13 +9,12 @@ use App\Http\Controllers\AboutusController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ContactusController;
 use App\Http\Controllers\PropertiesController;
-
+use App\Http\Controllers\BuyPropertiesController;
+use App\Http\Controllers\SellPropertiesController;
 
 
 
 use App\Http\Controllers\backend\UserController;
-use App\Http\Controllers\BuyPropertiesController;
-use App\Http\Controllers\SellPropertiesController;
 use App\Http\Controllers\backend\BookingController;
 use App\Http\Controllers\backend\ProjectController;
 use App\Http\Controllers\backend\LocationController;
@@ -48,7 +47,17 @@ Route::get('/registration',[AuthController::class,'registration'])->name('regist
 //properties
 Route::get('/properties',[PropertiesController::class,'properties'])->name('properties');
 Route::get('/buyproperties',[BuyPropertiesController::class,'buyproperties'])->name('buyproperties');
+Route::get('/see-details-for-property/{id}',[BuyPropertiesController::class,'singleView'])->name('buyproperties.singleView');
+
+
+
+
+
+
+
+
 Route::get('/sellproperties',[SellPropertiesController::class,'sellproperties'])->name("sellproperties");
+Route::post('/sell-properties-post',[SellPropertiesController::class,'sellPost'])->name('sell.post');
 
 
 //services

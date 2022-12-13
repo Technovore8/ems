@@ -19,7 +19,7 @@
   <label for="location_id">Location Id</label>
     <select name="location_id" class="form-control" id="location_id">
     @foreach($location as $data)
-    <option value="{{$data->name}}">{{$data->name}}</option>
+    <option value="{{$data->id}}">{{$data->name}}</option>
     @endforeach
     </select>
   </div> 

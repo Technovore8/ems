@@ -12,14 +12,14 @@
                 <a href="{{route('properties')}}">Properties</a>
                 <ul class="dropdown">
                   <li><a href="{{route('buyproperties')}}">Buy Property</a></li>
-                  <li><a href="#">Sell Property</a></li>
+                  <li><a href="{{route('sellproperties')}}">Sell Property</a></li>
                 </ul>
               </li>
               <li><a href="{{route('services')}}">Services</a></li>
               <li><a href="{{route('aboutus')}}">About</a></li>
               <li><a href="{{route('contactus')}}">Contact Us</a></li>
               <li><a href="contact.html">Search</a></li>
-              <li><a href="{{ route('login') }}">Login</a></li>
+              <li><a href="{{ route('login')}}">Login</a></li>
 
             </ul>
 

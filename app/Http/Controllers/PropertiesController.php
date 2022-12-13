@@ -9,6 +9,6 @@ class PropertiesController extends Controller
 {
     public function properties(){
        $properties=Property::with('location','project')->get();
-       dd($properties);
+       //dd($properties);
     }
 }

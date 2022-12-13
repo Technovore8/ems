@@ -18,7 +18,7 @@
     </tr>
   </thead>
   <tbody>
-    @foreach($Property as $data)
+    @foreach($property as $data)
     <tr>
       <th scope="row">{{$data->id}}</th>
       <td>{{$data->name}}</td>

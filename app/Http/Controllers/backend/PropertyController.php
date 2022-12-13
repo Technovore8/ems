@@ -18,8 +18,8 @@ class PropertyController extends Controller
     }
     
     public function index(){
-        $Property=Property::get();
-        return view('backend.pages.property.index',compact('Property'));
+        $property=Property::get();
+        return view('backend.pages.property.index',compact('property'));
     }
     
     public function store(Request $request){
@@ -29,7 +29,7 @@ class PropertyController extends Controller
             'price'=>'required',
             'details'=>'required'
         ]);
-    //    dd($request);
+   
         $filename=null;
         if($request->hasfile('image')){
         $file=$request->file('image');

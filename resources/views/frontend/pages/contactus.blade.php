@@ -52,8 +52,8 @@
               <li class="has-children">
                 <a href="{{route('properties')}}">Properties</a>
                 <ul class="dropdown">
-                  <li><a href="#">Buy Property</a></li>
-                  <li><a href="#">Sell Property</a></li>
+                  <li><a href="{{route('buyproperties')}}">Buy Property</a></li>
+                  <li><a href="{{route('sellproperties')}}">Sell Property</a></li>
                   <li class="has-children">
                     <a href="#">Dropdown</a>
                     <ul class="dropdown">
