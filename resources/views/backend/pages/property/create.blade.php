@@ -19,12 +19,12 @@
   <label for="location_id">Location Id</label>
     <select name="location_id" class="form-control" id="location_id">
     @foreach($location as $data)
-    <option value="{{$data->id}}">{{$data->name}}</option>
+    <option value="{{$data->name}}">{{$data->name}}</option>
     @endforeach
     </select>
   </div> 
   <div class="form-group">
-  <label for="project">Project Id</label>
+  <label for="project_id">Project Id</label>
     <select name="project_id" class="form-control" id="project_id">
     @foreach($project as $data)
     <option class="form-control" value="{{$data->id}}">{{$data->name}}</option>
@@ -32,8 +32,12 @@
     </select>
   </div>
   <div class="form-group">
-    <label for="text">Details</label>
+    <label for="text">Property Details</label>
     <input type="text" class="form-control" id="text" name="details" placeholder="Project details">
+  </div>
+  <div class="form-group">
+    <label for="text">Price</label>
+    <input type="text" class="form-control" id="text" name="price" placeholder="Property ">
   </div>
   <div class="form-group">
     <label for="image">Upload an Image</label>

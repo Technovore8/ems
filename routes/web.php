@@ -46,7 +46,7 @@ Route::get('/registration',[AuthController::class,'registration'])->name('regist
 
 
 //properties
-Route::get('/properties',[PropertiesController::class,'properties'])->name("properties");
+Route::get('/properties',[PropertiesController::class,'properties'])->name('properties');
 Route::get('/buyproperties',[BuyPropertiesController::class,'buyproperties'])->name('buyproperties');
 Route::get('/sellproperties',[SellPropertiesController::class,'sellproperties'])->name("sellproperties");
 
