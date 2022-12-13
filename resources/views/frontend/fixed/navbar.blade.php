@@ -13,21 +13,13 @@
                 <ul class="dropdown">
                   <li><a href="{{route('buyproperties')}}">Buy Property</a></li>
                   <li><a href="#">Sell Property</a></li>
-                  <li class="has-children">
-                    <a href="#">Dropdown</a>
-                    <ul class="dropdown">
-                      <li><a href="#">Sub Menu One</a></li>
-                      <li><a href="#">Sub Menu Two</a></li>
-                      <li><a href="#">Sub Menu Three</a></li>
-                    </ul>
-                  </li>
                 </ul>
               </li>
               <li><a href="{{route('services')}}">Services</a></li>
               <li><a href="{{route('aboutus')}}">About</a></li>
-              <li><a href="{{route('contactus'))">Contact Us</a></li>
+              <li><a href="{{route('contactus')}}">Contact Us</a></li>
               <li><a href="contact.html">Search</a></li>
-              <li><a href="contact.html">Login</a></li>
+              <li><a href="{{ route('login') }}">Login</a></li>
 
             </ul>
 
