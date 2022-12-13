@@ -44,7 +44,7 @@ class PropertyController extends Controller
         'details'=>$request->details,
         'slug'=>Str::slug($request->name),
         'image'=>$filename,
-        'price'=>$request->price,
+        'price'=>$request->price
 ]);
         return redirect()->route('backend.property.index');
     }
@@ -66,7 +66,7 @@ class PropertyController extends Controller
           $filename=date('Ymdhis').'.'.$file->getClientOriginalExtension();
           $file->storeAs('/uploads',$filename);
       }
-      $project->update([
+      $property->update([
         'name'=>$request->name,
         'location_id'=>$request->location_id,
         'project_id'=>$request->project_id,

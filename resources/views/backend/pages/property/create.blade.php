@@ -36,7 +36,7 @@
     <input type="text" class="form-control" id="text" name="details" placeholder="Project details">
   </div>
   <div class="form-group">
-    <label for="text">Price</label>
+    <label for="price">Price</label>
     <input type="text" class="form-control" id="text" name="price" placeholder="Property ">
   </div>
   <div class="form-group">
