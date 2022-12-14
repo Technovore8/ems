@@ -10,5 +10,6 @@ class PropertiesController extends Controller
     public function properties(){
        $properties=Property::with('location','project')->get();
        //dd($properties);
+       return view('frontend.pages.properties.properties',compact('properties'));
     }
 }
