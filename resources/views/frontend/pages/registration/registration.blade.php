@@ -35,46 +35,42 @@ height: 100vh !important;
           <div class="card-body p-4 p-md-5">
             <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Registration Info</h3>
 
-            <form class="px-md-2">
-
+            <form action="{{ route('reg.post') }}" method="POST">
+              @csrf
               <div class="form-outline mb-2">
-                <input type="text" id="form3Example1q" class="form-control" />
                 <label class="form-label" for="form3Example1q">Name</label>
+                <input type="text" name="name" id="form3Example1q" class="form-control" />
               </div>
 
               <div class="row">
                 <div class="col-md-16 mb-4">
-
                   <div class="form-outline address">
-                    <input type="text" class="form-control" id="address" />
                     <label for="address" class="form-label">Address</label>
-                  </div>
+                    <input type="text" name="address" class="form-control" id="address" />
+                  </div>  
 
-                
-                  
                 <div class="row">
                 <div class="col-md-16 mb-4">
                 <div class="form-group">
-                <input type="file" class="form-control" id="image" name='image'>
                 <label for="image">Upload an Image</label>
+                <input type="file" class="form-control" id="image" name='image'>
                 </div>
                 </div>
                 </div> 
 
-
                 <div class="row">
                 <div class="col-md-16 mb-4">
                   <div class="form-outline">
-                    <input type="email" id="email" class="form-control" />
                     <label class="email" for="email" >Enter your e-mail</label>
+                    <input type="email" id="email" name="email" class="form-control" />
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-16 mb-6">
                   <div class="form-outline address">
-                    <input type="password" class="form-control" id="password" />
                     <label for="password" class="form-label">Password</label>
+                    <input type="password" name="password" class="form-control" id="password"  />
                   </div>
 
                 </div>
