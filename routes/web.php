@@ -53,23 +53,17 @@ Route::put('/update-profile/{id}',[AuthController::class,'update'])->name('profi
 
 //properties
 Route::get('/properties',[PropertiesController::class,'properties'])->name('properties');
-Route::get('/buyproperties',[BuyPropertiesController::class,'buyproperties'])->name('buyproperties');
 Route::get('/see-details-for-property/{id}',[BuyPropertiesController::class,'singleView'])->name('property.singleView');
 Route::get('/all-property-index',[PropertiesController::class,'index'])->name('frontend.properties');
 
+Route::get('/sell-property',[SellPropertiesController::class,'sell'])->name('property.sell');
+Route::post('/sell-properties-post',[SellPropertiesController::class,'sellPost'])->name('sell.post');
 
 
 #book 
 Route::get('/book-visit/{id}',[BookController::class,'create'])->name('frontend.book.create');
 
 
-
-
-
-
-
-Route::get('/sellproperties',[SellPropertiesController::class,'sellproperties'])->name("sellproperties");
-Route::post('/sell-properties-post',[SellPropertiesController::class,'sellPost'])->name('sell.post');
 
 
 //services

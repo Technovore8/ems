@@ -14,7 +14,7 @@
           <li><a href="services.html">Projects</a></li>
           <li><a href="{{ route('aboutus') }}">About</a></li>
           <li><a href="{{ route('contactus') }}">Contact Us</a></li>
-          <li><a href="services.html">Sell Projects</a></li>
+          <li><a href="{{ route('property.sell') }}">Sell Projects</a></li>
           @if (auth()->user())
           <li><a href="{{ route('user.profile') }}">{{ auth()->user()->name }}|Profile</a></li>
           <li><a href="{{ route('logout') }}">Logout</a></li>

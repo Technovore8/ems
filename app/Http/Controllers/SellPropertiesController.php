@@ -6,11 +6,10 @@ use App\Models\Project;
 use App\Models\Location;
 use App\Models\Property;
 use Illuminate\Http\Request;
-use App\Http\Controllers\SellPropertiesController;
 
 class SellPropertiesController extends Controller
 {
-    public function sellproperties(){
+    public function sell(){
         $location=Location::all();
         $project=Project::all();
         return view('frontend.pages.properties.sellproperties',compact('location','project'));
