@@ -16,12 +16,12 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="fonts/icomoon/style.css" />
-    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css" />
+    <link rel="stylesheet" href="{{url('fonts/icomoon/style.css')}}" />
+    <link rel="stylesheet" href="{{url('fonts/flaticon/font/flaticon.css')}}" />
 
-    <link rel="stylesheet" href="css/tiny-slider.css" />
-    <link rel="stylesheet" href="css/aos.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="{{url('css/tiny-slider.css')}}" />
+    <link rel="stylesheet" href="{{url('css/aos.css')}}" />
+    <link rel="stylesheet" href="{{url('css/style.css')}}" />
 
     <title>
       Property 
@@ -89,11 +89,11 @@
       </div>
     </div>
 
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/tiny-slider.js"></script>
-    <script src="js/aos.js"></script>
-    <script src="js/navbar.js"></script>
-    <script src="js/counter.js"></script>
-    <script src="js/custom.js"></script>
+    <script src="{{url('js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{url('js/tiny-slider.js')}}"></script>
+    <script src="{{url('js/aos.js')}}"></script>
+    <script src="{{url('js/navbar.js')}}"></script>
+    <script src="{{url('js/counter.js')}}"></script>
+    <script src="{{url('js/custom.js')}}"></script>
   </body>
 </html>
