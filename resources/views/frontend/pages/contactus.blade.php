@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -41,44 +40,7 @@
 
     <nav class="site-nav">
       <div class="container">
-        <div class="menu-bg-wrap">
-          <div class="site-navigation">
-            <a href="{{route('contactus')}}" class="logo m-0 float-start">Contact us</a>
-
-            <ul
-              class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end"
-            >
-              <li><a href="{{route('home')}}">Home</a></li>
-              <li class="has-children">
-                <a href="{{route('properties')}}">Properties</a>
-                <ul class="dropdown">
-                  <li><a href="{{route('buyproperties')}}">Buy Property</a></li>
-                  <li><a href="{{route('sellproperties')}}">Sell Property</a></li>
-                  <li class="has-children">
-                    <a href="#">Dropdown</a>
-                    <ul class="dropdown">
-                      <li><a href="#">Sub Menu One</a></li>
-                      <li><a href="#">Sub Menu Two</a></li>
-                      <li><a href="#">Sub Menu Three</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <li><a href="{{route('services')}}">Services</a></li>
-              <li><a href="{{route('aboutus')}}">About</a></li>
-              <li class="active"><a href="{{route('contactus')}}">Contact Us</a></li>
-            </ul>
-
-            <a
-              href="#"
-              class="burger light me-auto float-end mt-1 site-menu-toggle js-menu-toggle d-inline-block d-lg-none"
-              data-toggle="collapse"
-              data-target="#main-navbar"
-            >
-              <span></span>
-            </a>
-          </div>
-        </div>
+        
       </div>
     </nav>
 
@@ -97,7 +59,7 @@
               data-aos-delay="200"
             >
               <ol class="breadcrumb text-center justify-content-center">
-                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
                 <li
                   class="breadcrumb-item active text-white-50"
                   aria-current="page"

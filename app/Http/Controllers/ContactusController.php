@@ -12,7 +12,7 @@ class ContactusController extends Controller
     }
     
     public function store(Request $request){
-       //        dd($request);
+        dd($request);
         $request->validate([
             'message'=>'required'
         ]);
@@ -20,7 +20,7 @@ class ContactusController extends Controller
            'name'=>auth()->user()->name,
            'email'=>auth()->user()->email,
            'subject'=>$request->subject,
-           'message'=>$request->request 
+           'message'=>$request->message 
         ]);
         return redirect()->back();
     } 
