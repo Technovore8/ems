@@ -55,6 +55,7 @@ Route::put('/update-profile/{id}',[AuthController::class,'update'])->name('profi
 Route::get('/properties',[PropertiesController::class,'properties'])->name('properties');
 Route::get('/buyproperties',[BuyPropertiesController::class,'buyproperties'])->name('buyproperties');
 Route::get('/see-details-for-property/{id}',[BuyPropertiesController::class,'singleView'])->name('property.singleView');
+Route::get('/all-property-index',[PropertiesController::class,'index'])->name('frontend.properties');
 
 
 

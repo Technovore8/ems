@@ -1,6 +1,6 @@
 @extends('frontend.master')
 @section('content')
-<div class="section">
+<div class=" mt-5 section">
   <div class="container">
     <div class="row">
       <div

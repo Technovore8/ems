@@ -12,4 +12,9 @@ class PropertiesController extends Controller
        //dd($properties);
        return view('frontend.pages.properties.properties',compact('properties'));
     }
+
+    public function index(){
+        $properties=Property::with('location','project')->get();
+        return view('frontend.pages.properties.index',compact('properties'));
+    }
 }

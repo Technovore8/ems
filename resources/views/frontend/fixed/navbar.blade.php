@@ -7,9 +7,9 @@
         <ul
           class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end"
         >
-          <li class="active"><a href="index.html">Home</a></li>
+          <li class="active"><a href="{{ route('home') }}">Home</a></li>
           <li>
-            <a href="properties.html">Properties</a>
+            <a href="{{ route('frontend.properties') }}">Properties</a>
           </li>
           <li><a href="services.html">Projects</a></li>
           <li><a href="{{ route('aboutus') }}">About</a></li>
