@@ -21,7 +21,7 @@
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact Us</a></li>
           @if (auth()->user())
-          <li><a href="">{{ auth()->user()->name }}|Profile</a></li>
+          <li><a href="{{ route('user.profile') }}">{{ auth()->user()->name }}|Profile</a></li>
           <li><a href="{{ route('logout') }}">Logout</a></li>
           @else
           <li><a href="{{ route('login') }}">login</a></li>

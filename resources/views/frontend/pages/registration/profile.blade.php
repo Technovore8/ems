@@ -4,7 +4,7 @@
     <div class="card p-4"> 
         <div class=" image d-flex flex-column justify-content-center align-items-center"> 
             <button class="btn btn-secondary"> 
-                <img src="{{url('/uploads/'.auth()->user()->image)}}" height="100" width="100" />\
+                <img src="{{url('/uploads/',auth()->user()->image)}}" height="100" width="100" />\
             </button> 
                 <span class="name mt-3">{{ auth()->user()->name }}</span> 
                 <span class="idd">{{ auth()->user()->email }}</span> 
@@ -23,3 +23,4 @@
                 </div> 
             </div>
 </div>
+@endsection
