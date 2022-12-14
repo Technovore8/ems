@@ -26,7 +26,7 @@
             @foreach ($properties as $data)
             <div class="property-item">
               <a href="property-single.html" class="img">
-                <img src="images/img_1.jpg" alt="Image" class="img-fluid" />
+                <img src="{{url('/uploads/',$data->image)}}" alt="Image" class="img-fluid" />
               </a>
               <div class="property-content">
                 <div class="price mb-2"><span>{{ $data->price }}</span></div>

@@ -25,7 +25,7 @@
       <td>{{$data->location_id}}</td>
       <td>{{$data->project_id}}</td>
       <td>{{$data->details}}</td>
-      <td><img src="{{url('/uploads/'.$data->image)}}" alt=""></td>
+      <td><img src="{{url('/uploads/',$data->image)}}" alt=""></td>
       <td>{{$data->status}}</td>
       <td>{{$data->price}}</td>
       <td>

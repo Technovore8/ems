@@ -27,8 +27,12 @@
   </div>
     <div class="form-group">
         <label for="text">Details</label>
-    <input type="text" class="form-control" id="text" name='etails' placeholder="Enter project details"value="{{old('details',$property->details)}}">
+    <input type="text" class="form-control" id="text" name='details' placeholder="Enter project details"value="{{old('details',$property->details)}}">
     </div> 
+    <div class="form-group">
+      <label for="price">Price</label>
+  <input type="text" class="form-control" id="price" name='price' placeholder="Enter project details"value="{{old('details',$property->details)}}">
+  </div> 
     <div class="form-group">
         <label for="image">Upload an Image</label>
         <input type="file" class="form-control" id="image" name='image'>
