@@ -11,7 +11,7 @@
           <li>
             <a href="{{ route('frontend.properties') }}">Properties</a>
           </li>
-          <li><a href="services.html">Projects</a></li>
+          <li><a href="{{ route('front.project') }}">Projects</a></li>
           <li><a href="{{ route('aboutus') }}">About</a></li>
           <li><a href="{{ route('contactus') }}">Contact Us</a></li>
           <li><a href="{{ route('property.sell') }}">Sell Projects</a></li>

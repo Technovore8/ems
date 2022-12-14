@@ -10,10 +10,14 @@
         <label for="name">Name</label>
         <input type="text" class="form-control" id="name" name="name" placeholder="Enter project name">
     </div>
-  <div class="form-group">
-    <label for="text">Address</label>
-    <input type="text" class="form-control" id="address" name='address' placeholder="Enter your address">
-  </div> 
+    <div class="form-group">
+      <label for="location_id">Location Id</label>
+        <select name="location_id" class="form-control" id="location_id">
+        @foreach($location as $data)
+        <option value="{{$data->id}}">{{$data->name}}</option>
+        @endforeach
+        </select>
+      </div>
   <div class="form-group">
     <label for="image">Upload an Image</label>
     <input type="file" class="form-control" id="image" name='image'>

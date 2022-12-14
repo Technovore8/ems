@@ -24,6 +24,7 @@ use App\Http\Controllers\backend\ScheduleController;
 use App\Http\Controllers\backend\HomeController as backendHomecontroller;
 use App\Http\Controllers\backend\LocationController as backendLocationController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\ProjectController as ControllersProjectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,7 +38,6 @@ use App\Http\Controllers\BookController;
 */
 //Home
 Route::get('/',[HomeController::class,'home'])->name("home");
-
 
 #auth
 Route::get('/login',[AuthController::class,'login'])->name('login');
@@ -55,57 +55,24 @@ Route::put('/update-profile/{id}',[AuthController::class,'update'])->name('profi
 Route::get('/properties',[PropertiesController::class,'properties'])->name('properties');
 Route::get('/see-details-for-property/{id}',[BuyPropertiesController::class,'singleView'])->name('property.singleView');
 Route::get('/all-property-index',[PropertiesController::class,'index'])->name('frontend.properties');
-
 Route::get('/sell-property',[SellPropertiesController::class,'sell'])->name('property.sell');
 Route::post('/sell-properties-post',[SellPropertiesController::class,'sellPost'])->name('sell.post');
 
+#project
+Route::get('/front-project-index',[ControllersProjectController::class,'index'])->name('front.project');
+Route::get('/front-project-details/{id}',[ControllersProjectController::class,'details'])->name('front.project.view');
 
 #book 
 Route::get('/book-visit/{id}',[BookController::class,'create'])->name('frontend.book.create');
-
-
-
-
 //services
 Route::get('/services',[ServiceController::class,'services'])->name('services');
-
-
-
 //Aboutus
 Route::get('/aboutus',[AboutusController::class,'aboutus'])->name('aboutus');
-
-
-
 //Contactus
 Route::get('/contactus',[ContactusController::class,'contactus'])->name('contactus');
 Route::post('/contactus-message',[ContactusController::class,'store'])->name('contactus.message');
-
-
 //search page
 Route::get('/search',[SearchController::class,'search'])->name('search');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
