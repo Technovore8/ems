@@ -14,18 +14,18 @@
               <li><a href="#">Buy Property</a></li>
               <li><a href="#">Sell Property</a></li>
               <li class="has-children">
-                <a href="#">Dropdown</a>
-                <ul class="dropdown">
-                  <li><a href="#">Sub Menu One</a></li>
-                  <li><a href="#">Sub Menu Two</a></li>
-                  <li><a href="#">Sub Menu Three</a></li>
-                </ul>
               </li>
             </ul>
           </li>
           <li><a href="services.html">Services</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact Us</a></li>
+          @if (auth()->user())
+          <li><a href="">{{ auth()->user()->name }}|Profile</a></li>
+          <li><a href="{{ route('logout') }}">Logout</a></li>
+          @else
+          <li><a href="{{ route('login') }}">login</a></li>
+          @endif
         </ul>
 
         <a

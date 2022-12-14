@@ -52,7 +52,7 @@ Route::put('/update-profile/{id}',[AuthController::class,'update'])->name('profi
 //properties
 Route::get('/properties',[PropertiesController::class,'properties'])->name('properties');
 Route::get('/buyproperties',[BuyPropertiesController::class,'buyproperties'])->name('buyproperties');
-Route::get('/see-details-for-property/{id}',[BuyPropertiesController::class,'singleView'])->name('buyproperties.singleView');
+Route::get('/see-details-for-property/{id}',[BuyPropertiesController::class,'singleView'])->name('property.singleView');
 
 
 
