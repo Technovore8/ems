@@ -9,13 +9,14 @@ use App\Http\Controllers\AboutusController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ContactusController;
 use App\Http\Controllers\PropertiesController;
-use App\Http\Controllers\BuyPropertiesController;
-use App\Http\Controllers\SellPropertiesController;
-
-
-
 use App\Http\Controllers\backend\UserController;
+use App\Http\Controllers\BuyPropertiesController;
+
+
+
+use App\Http\Controllers\SellPropertiesController;
 use App\Http\Controllers\backend\BookingController;
+use App\Http\Controllers\backend\ContactController;
 use App\Http\Controllers\backend\ProjectController;
 use App\Http\Controllers\backend\LocationController;
 use App\Http\Controllers\backend\PropertyController;
@@ -72,6 +73,7 @@ Route::get('/aboutus',[AboutusController::class,'aboutus'])->name('aboutus');
 
 //Contactus
 Route::get('/contactus',[ContactusController::class,'contactus'])->name('contactus');
+Route::post('/contactus-message',[ContactusController::class,'store'])->name('contactus.message');
 
 
 //search page
@@ -164,3 +166,5 @@ Route::get('/Property-delete/{id}',[PropertyController::class,'delete'])->name('
 
 
 
+#contactus
+Route::get('/contact-index',[ContactController::class,'index'])->name('backend.contact.index');
