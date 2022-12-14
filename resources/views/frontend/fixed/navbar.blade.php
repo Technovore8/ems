@@ -19,8 +19,11 @@
               <li><a href="{{route('aboutus')}}">About</a></li>
               <li><a href="{{route('contactus')}}">Contact Us</a></li>
               <li><a href="contact.html">Search</a></li>
+              @if (auth()->user())
+              <li><a href="{{ route('logout')}}">Logout</a></li>
+              @else
               <li><a href="{{ route('login')}}">Login</a></li>
-
+              @endif
             </ul>
 
             <a

@@ -12,7 +12,8 @@ class ContactusController extends Controller
     }
     
     public function store(Request $request){
-        dd($request);
+        // dd($request);
+        dd(auth()->user());
         $request->validate([
             'message'=>'required'
         ]);

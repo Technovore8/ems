@@ -21,6 +21,13 @@ class AuthController extends Controller
             return redirect()->back();
         }
     }
+
+    public function logout(){
+        Auth::logout();
+        return redirect()->route('home');
+    }
+
+    
     public function registration(){
         return view('frontend.pages.registration.registration');
     }
