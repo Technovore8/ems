@@ -12,8 +12,8 @@
             <a href="properties.html">Properties</a>
           </li>
           <li><a href="services.html">Projects</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="{{ route('aboutus') }}">About</a></li>
+          <li><a href="{{ route('contactus') }}">Contact Us</a></li>
           <li><a href="services.html">Sell Projects</a></li>
           @if (auth()->user())
           <li><a href="{{ route('user.profile') }}">{{ auth()->user()->name }}|Profile</a></li>
