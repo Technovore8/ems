@@ -17,4 +17,10 @@ class PropertiesController extends Controller
         $properties=Property::with('location','project')->get();
         return view('frontend.pages.properties.index',compact('properties'));
     }
+
+    public function projectPro($id){
+        $properties=Property::where('project_id',$id)->get();
+        return view('frontend.pages.project.projectPro',compact('properties'));
+    }
+
 }

@@ -13,7 +13,7 @@
               <span class="d-block mb-2 text-black-50">{{$project->location->name}}</span>
               <span class="city d-block mb-3">{{$project->name}}</span>
             <a href="{{ route('home') }}"><button class="btn btn-primary">Back</button></a>
-            <a href="#"><button class="btn btn-primary">See Property of this project</button></a>
+            <a href="{{ route('project.property',$project->id) }}"><button class="btn btn-primary">See Property of this project</button></a>
             </div>
           </div>
         </div>

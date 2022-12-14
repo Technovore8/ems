@@ -57,6 +57,8 @@ Route::get('/see-details-for-property/{id}',[BuyPropertiesController::class,'sin
 Route::get('/all-property-index',[PropertiesController::class,'index'])->name('frontend.properties');
 Route::get('/sell-property',[SellPropertiesController::class,'sell'])->name('property.sell');
 Route::post('/sell-properties-post',[SellPropertiesController::class,'sellPost'])->name('sell.post');
+Route::get('/property-with-project/{id}',[PropertiesController::class,'projectPro'])->name('project.property');
+
 
 #project
 Route::get('/front-project-index',[ControllersProjectController::class,'index'])->name('front.project');
