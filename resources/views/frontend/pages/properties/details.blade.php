@@ -14,6 +14,7 @@
               <span class="d-block mb-2 text-black-50">{{$property->location->name}}</span>
               <span class="city d-block mb-3">{{$property->name}}</span>
             <a href="{{ route('home') }}"><button class="btn btn-primary">Back</button></a>
+            <a href="{{ route('frontend.book.create',$property->id) }}"><button class="btn btn-primary">Book a Visit</button></a>
             </div>
           </div>
         </div>

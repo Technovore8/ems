@@ -23,6 +23,8 @@ use App\Http\Controllers\backend\PropertyController;
 use App\Http\Controllers\backend\ScheduleController;
 use App\Http\Controllers\backend\HomeController as backendHomecontroller;
 use App\Http\Controllers\backend\LocationController as backendLocationController;
+use App\Http\Controllers\BookController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -54,6 +56,10 @@ Route::get('/properties',[PropertiesController::class,'properties'])->name('prop
 Route::get('/buyproperties',[BuyPropertiesController::class,'buyproperties'])->name('buyproperties');
 Route::get('/see-details-for-property/{id}',[BuyPropertiesController::class,'singleView'])->name('property.singleView');
 
+
+
+#book 
+Route::get('/book-visit/{id}',[BookController::class,'create'])->name('frontend.book.create');
 
 
 
