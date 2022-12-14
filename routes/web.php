@@ -44,7 +44,10 @@ Route::get('/logout',[AuthController::class,'logout'])->name('logout');
 Route::get('/registration',[AuthController::class,'registration'])->name('registration');
 Route::post('/registration-post',[AuthController::class,'store'])->name('reg.post');
 
-
+#profile
+Route::get('/user-profile',[AuthController::class,'profile'])->name('user.profile');
+Route::get('/profile-edit/{id}',[AuthController::class,'edit'])->name('profile.edit');
+Route::put('/update-profile/{id}',[AuthController::class,'update'])->name('profile.update');
 
 //properties
 Route::get('/properties',[PropertiesController::class,'properties'])->name('properties');

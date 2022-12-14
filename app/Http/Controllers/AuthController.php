@@ -56,4 +56,42 @@ class AuthController extends Controller
         ]);
         return redirect()->route('login');
     }
+
+
+
+
+    #user profile
+    public function profile(){
+        
+        return view('frontend.pages.registration.profile');
+    }
+
+    public function edit($id){
+        $user=Auth::user();
+        return view('frontend.pages.registration.profileEdit',compact('user'));
+    }
+
+    public function update(Request $request, $id){
+        $request->validate([
+            'name'=>'required',
+            'email'=>'required',
+        ]);
+        $user=Auth::user();
+        $filename=null;
+        if($request->hasFile('image')){
+            $file=$request->file('image');
+            $filename=date('Ymdhis').'.'.$file->getClientOriginalExtension();
+            $file->storeAs('/uploads',$filename);
+        }
+        $user->update([
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'address'=>$request->address,
+            'image'=>$filename,
+        ]);
+
+        return redirect()->route('user.profile');
+
+
+    }
 }
