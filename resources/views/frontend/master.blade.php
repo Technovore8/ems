@@ -36,6 +36,7 @@
       </div>
       <div class="site-mobile-menu-body"></div>
     </div>
+    @if (Route::is('home'))
     <div class="hero">
       <div class="hero-slide">
         <div
@@ -75,9 +76,16 @@
         </div>
       </div>
     </div>
+    @endif
 
    @include('frontend.fixed.navbar')
-  @yield('content')
+  <div class="container" style="margin-top: 200px">
+    <div class="main">
+      <div class="container">
+        @yield('content')
+      </div>
+    </div>
+  </div>
     {{-- #agents --}}
 
     @includeIf('frontend.fixed.footer')
