@@ -6,6 +6,7 @@ use App\Models\Location;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Brian2694\Toastr\Facades\Toastr;
 
 class LocationController extends Controller
 {
@@ -25,7 +26,7 @@ class LocationController extends Controller
             'name'=>$request->name,
             'slug'=>Str::slug($request->name),
         ]);
-
+        Toastr::success('Location created successfuly', 'success');
         return redirect()->route('backend.location.index');
     }
     public function edit($id)
@@ -49,10 +50,12 @@ class LocationController extends Controller
             'name'=>$request->name,
 
         ]);
+        Toastr::success('Location updated successfuly', 'success');
         return redirect()->route('backend.location.index');
     }
     public function delete($id){
         $location=Location::find($id)->delete();
+        Toastr::success('Location deleted successfuly', 'warning');
         return redirect()->route('backend.location.index');
     }
 

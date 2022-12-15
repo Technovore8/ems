@@ -3,10 +3,11 @@
 namespace App\Http\Controllers\backend;
 
 use App\Models\Project;
+use App\Models\Location;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Location;
+use Brian2694\Toastr\Facades\Toastr;
 
 class ProjectController extends Controller
 {
@@ -32,6 +33,7 @@ class ProjectController extends Controller
             'details'=>$request->details,
             'slug'=>Str::slug($request->name),
         ]);
+        Toastr::success('project created successfuly', 'success');
         return redirect()->route('backend.project.index');
     }
 
@@ -58,10 +60,12 @@ class ProjectController extends Controller
             'image'=>$filename,
             'details'=>$request->details,
         ]);
+        Toastr::success('project updated successfuly', 'success');
         return redirect()->route('backend.project.index');
     }
     public function delete($id){
         $project=Project::find($id)->delete();
+        Toastr::error('project deleted successfuly', 'success');
         return redirect()->route('backend.project.index');
 
     }

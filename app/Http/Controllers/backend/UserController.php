@@ -5,6 +5,7 @@ namespace App\Http\Controllers\backend;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Brian2694\Toastr\Facades\Toastr;
 
 class UserController extends Controller
 {
@@ -38,6 +39,7 @@ class UserController extends Controller
             'password'=>bcrypt($request->password),
             'image'=>$filename,
         ]);
+        Toastr::success('user created successfuly', 'success');
         return redirect()->route('backend.user.index');
     }
 
@@ -65,12 +67,13 @@ class UserController extends Controller
             'address'=>$request->address,
             'image'=>$filename,
         ]);
-
+        Toastr::success('user updated successfuly', 'success');
         return redirect()->route('backend.user.index');
     }
 
     public function delete($id){
         $user=User::find($id)->delete();
+        Toastr::error('user deleted successfuly', 'success');
         return redirect()->route('backend.user.index');
     }
 }

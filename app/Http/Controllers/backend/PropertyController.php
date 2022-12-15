@@ -8,6 +8,7 @@ use App\Models\Property;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Brian2694\Toastr\Facades\Toastr;
 
 class PropertyController extends Controller
 {
@@ -46,6 +47,7 @@ class PropertyController extends Controller
         'image'=>$filename,
         'price'=>$request->price
 ]);
+Toastr::success('property created successfuly', 'success');
         return redirect()->route('backend.property.index');
     }
 
@@ -75,11 +77,13 @@ class PropertyController extends Controller
         'image'=>$filename,
         'price'=>$request->price,
       ]);
+      Toastr::success('property updated successfuly', 'success');
       return redirect()->route('backend.property.index');
 
     }
     public function delete($id){
         $property=Property::find($id)->delete();
+        Toastr::error('property deleted successfuly', 'success');
         return redirect()->route('backend.property.index');
     }
 }
