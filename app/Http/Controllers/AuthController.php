@@ -76,8 +76,8 @@ class AuthController extends Controller
             'name'=>'required',
             'email'=>'required',
         ]);
-        $user=Auth::user();
-        $filename=null;
+        $user=auth()->user();
+        $filename=$user->image;
         if($request->hasFile('image')){
             $file=$request->file('image');
             $filename=date('Ymdhis').'.'.$file->getClientOriginalExtension();
