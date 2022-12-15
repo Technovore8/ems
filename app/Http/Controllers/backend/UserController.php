@@ -47,12 +47,13 @@ class UserController extends Controller
     }
 #update
     public function update(Request $request,$id){
+        // dd($request->all());
         $request->validate([
             'name'=>'required',
             'email'=>'required',
         ]);
         $user=User::find($id);
-        $filename=null;
+        $filename=$user->image;
         if($request->hasFile('image')){
             $file=$request->file('image');
             $filename=date('Ymdhis').'.'.$file->getClientOriginalExtension();
