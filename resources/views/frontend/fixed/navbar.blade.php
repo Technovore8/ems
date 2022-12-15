@@ -16,7 +16,18 @@
           <li><a href="{{ route('contactus') }}">Contact Us</a></li>
           <li><a href="{{ route('property.sell') }}">Sell Projects</a></li>
           @if (auth()->user())
-          <li><a href="{{ route('user.profile') }}">{{ auth()->user()->name }}|Profile</a></li>
+          <li>
+
+              @auth
+                @if (auth()->user()->role == 'admin')
+                <a href="{{ route('admin') }}">{{ auth()->user()->name }}|Profile</a>
+                @else
+                <a href="{{ route('user.profile') }}">{{ auth()->user()->name }}|Profile</a>
+                @endif
+              @endauth
+
+
+          </li>
           <li><a href="{{ route('logout') }}">Logout</a></li>
           @else
           <li><a href="{{ route('login') }}">login</a></li>

@@ -1,11 +1,29 @@
 @extends('frontend.master')
 @section('content')
-    @foreach ($properties as $data)
-        <img src="{{url('/uploads/',$data->image)}}" alt="Image" class="img-fluid" />
-        <span>{{ $data->price }}</span>
-          <span class="city d-block mb-3">{{ $data->location->name }}</span>
-          <a href="{{ route('property.singleView',$data->id) }}"
-            class="btn btn-primary py-2 px-3">See details</a>
-        
-    @endforeach
+
+<section class="container">
+  <div class="container">
+    <div class="container">
+      <div class="row">
+        @foreach ($properties as $data)
+          <div class="col-md-4">
+      
+      
+            <div class="box-feature">
+              <span ><img width="200px" src="{{url('/uploads/',$data->image)}}" alt="" srcset=""></span>
+              <h3 class="mb-3">{{ $data->location->name }}</h3>
+              <p>
+                {{ $data->details }}
+              </p>
+              <p><a href="{{ route('property.singleView',$data->id) }}" class="learn-more">view More</a></p>
+            </div>
+             
+              
+          </div>
+                @endforeach
+      </div>
+    </div>
+  </div>
+</section>
+
 @endsection
