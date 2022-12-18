@@ -37,6 +37,7 @@ use App\Http\Controllers\backend\LocationController as backendLocationController
 | contains the "web" middleware group. Now create something great!
 |
 */
+#frontend
 //Home
 Route::get('/',[HomeController::class,'home'])->name("home");
 

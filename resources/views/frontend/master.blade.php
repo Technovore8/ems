@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="{{url('css/style.css')}}" />
     <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
     <title>
-      Property 
+      EverNEST
     </title>
   </head>
   <body>
@@ -41,10 +41,8 @@
       <div class="hero-slide">
         <div
           class="img overlay"
-          style="background-image: url('images/hero_bg_3.jpg')"
-        ></div>
-        <div
-          class="img overlay"
+          style="background-image: url('images/hero_bg_3.jpg')"></div>
+        <div class="img overlay"
           style="background-image: url('images/hero_bg_2.jpg')"
         ></div>
         <div
@@ -57,7 +55,7 @@
         <div class="row justify-content-center align-items-center">
           <div class="col-lg-9 text-center">
             <h1 class="heading" data-aos="fade-up">
-              Easiest way to find your dream home
+              Easiest way to find your dream land
             </h1>
             <form
               action="#"
@@ -68,7 +66,7 @@
               <input
                 type="text"
                 class="form-control px-4"
-                placeholder="Your ZIP code or City. e.g. New York"
+                placeholder="Search your land in Dhaka"
               />
               <button type="submit" class="btn btn-primary">Search</button>
             </form>

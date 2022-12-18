@@ -13,8 +13,8 @@
             <i class="icon-room"></i>
             <h4 class="mb-2">Location:</h4>
             <p>
-              43 Raymouth Rd. Baltemoer,<br />
-              London 3910
+              Rd#13, Sector#7, Uttara<br />
+              Dhaka-1230
             </p>
           </div>
 
@@ -22,21 +22,22 @@
             <i class="icon-clock-o"></i>
             <h4 class="mb-2">Open Hours:</h4>
             <p>
-              Sunday-Friday:<br />
-              11:00 AM - 2300 PM
+              Sunday-Thursday:<br />
+              11:00 AM - 08:00 PM
             </p>
           </div>
 
           <div class="email mt-4">
             <i class="icon-envelope"></i>
             <h4 class="mb-2">Email:</h4>
-            <p>info@Untree.co</p>
+            <p>evernest007@gmail.com</p>
           </div>
 
           <div class="phone mt-4">
             <i class="icon-phone"></i>
             <h4 class="mb-2">Call:</h4>
-            <p>+1 1234 55488 55</p>
+            <p>+8801990902378</p>
+            <p>+8801629522772</p>
           </div>
         </div>
       </div>

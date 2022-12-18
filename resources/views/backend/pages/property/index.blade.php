@@ -12,7 +12,8 @@
       <th scope="col">project</th>
       <th scope="col">Details</th>
       <th scope="col">Image</th>
-      <th scope="col">NIDI</th>
+      <th scope="col">NID</th>
+      <th scope="col">Khotian/porcha</th>
       <th scope="col">Status</th> 
       <th scope="col">Price</th>  
       <th scope="col">Action</th> 
@@ -28,6 +29,7 @@
       <td>{{$data->details}}</td>
       <td><img src="{{url('/uploads/',$data->image)}}" alt=""></td>
       <td><img src="{{url('/uploads/',$data->nid_image)}}" alt=""></td>
+      <td><img src="{{url('/uploads/',$data->khotian_image)}}" alt=""></td>
       <td>{{$data->status}}</td>
       <td>{{$data->price}}</td>
       <td>
