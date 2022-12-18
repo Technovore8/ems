@@ -17,9 +17,18 @@
         <label for="text">Address</label>
     <input type="text" class="form-control" id="address" name='address' placeholder="Enter your address"value="{{old('address',$user->address)}}">
     </div> 
+   
     <div class="form-group">
         <label for="image">Upload an Image</label>
         <input type="file" class="form-control" id="image" name='image'>
+    </div> 
+    <div class="form-group">
+        <label for="nid_image">NID</label>
+        <input type="file" class="form-control" id="nid_image" name='nid_image' placeholder="Enter your NID image">
+    </div> 
+    <div class="form-group">
+        <label for="role">Role</label>
+    <input type="role" class="form-control" id="role" name='role' value="{{old('role',$user->role)}}">
     </div> 
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>

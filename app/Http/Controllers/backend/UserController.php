@@ -18,11 +18,12 @@ class UserController extends Controller
     }
 
     public function store(Request $request){
+        //dd($request);
         #validation
         $request->validate([
             'name'=>'required',
             'email'=>'required',
-            'password'=>'required'
+            'password'=>'required'     
         ]);
         #file system handling
         $filename=null;
@@ -31,6 +32,13 @@ class UserController extends Controller
             $filename=date('Ymdhis').'.'.$file->getClientOriginalExtension();
             $file->storeAs('/uploads',$filename);
         }
+        $nidfilename=null;
+        if($request->hasFile('nid_image')){
+            $file=$request->file('nid_image');
+            $nidfilename=date('Ymdhis').'.'.$file->getClientOriginalExtension();
+            $file->storeAs('/uploads',$nidfilename);
+        }
+        
         #post data
         User::create([
             'name'=>$request->name,
@@ -38,7 +46,11 @@ class UserController extends Controller
             'address'=>$request->address,
             'password'=>bcrypt($request->password),
             'image'=>$filename,
+            'nid_image'=>$nidfilename
         ]);
+        
+    
+
         Toastr::success('user created successfuly', 'success');
         return redirect()->route('backend.user.index');
     }
@@ -61,11 +73,19 @@ class UserController extends Controller
             $filename=date('Ymdhis').'.'.$file->getClientOriginalExtension();
             $file->storeAs('/uploads',$filename);
         }
+        $user=User::find($id);
+        $nidfilename=$user->image;
+        if($request->hasFile('image')){
+            $file=$request->file('image');
+            $nidfilename=date('Ymdhis').'.'.$file->getClientOriginalExtension();
+            $file->storeAs('/uploads',$nidfilename);
+        }
         $user->update([
             'name'=>$request->name,
             'email'=>$request->email,
             'address'=>$request->address,
             'image'=>$filename,
+            'nid_image'=>$nidfilename
         ]);
         Toastr::success('user updated successfuly', 'success');
         return redirect()->route('backend.user.index');
@@ -76,4 +96,5 @@ class UserController extends Controller
         Toastr::error('user deleted successfuly', 'success');
         return redirect()->route('backend.user.index');
     }
+   
 }

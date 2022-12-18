@@ -33,6 +33,14 @@
                 </div>
                 </div>
                 </div> 
+                <div class="row">
+                <div class="col-md-16 mb-4">
+                <div class="form-group">
+                <label for="nid_image">NID</label>
+                <input type="file" class="form-control" id="nid_image" name='nid_image'>
+                </div>
+                </div>
+                </div> 
 
                 <div class="row">
                 <div class="col-md-16 mb-4">
@@ -42,6 +50,10 @@
                   </div>
                 </div>
               </div>
+              <select name="role" id="">
+                <option value="seller">Seller</option>
+                <option value="buyer">Buyer</option>
+              </select>
               <div class="row">
                 <div class="col-md-16 mb-6">
                   <div class="form-outline address">

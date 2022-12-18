@@ -46,6 +46,12 @@ class AuthController extends Controller
             $filename=date('Ymdhis').'.'.$file->getClientOriginalExtension();
             $file->storeAs('/uploads',$filename);
         }
+        $nidfilename=null;
+        if($request->hasFile('nid_image')){
+            $file=$request->file('nid_image');
+            $nidfilename=date('Ymdhis').'.'.$file->getClientOriginalExtension();
+            $file->storeAs('/uploads',$nidfilename);
+        }
         #post data
         User::create([
             'name'=>$request->name,
@@ -53,6 +59,8 @@ class AuthController extends Controller
             'address'=>$request->address,
             'password'=>bcrypt($request->password),
             'image'=>$filename,
+            'nid_image'=>$nidfilename,
+            'role'=>$request->role
         ]);
         return redirect()->route('login');
     }
@@ -83,11 +91,18 @@ class AuthController extends Controller
             $filename=date('Ymdhis').'.'.$file->getClientOriginalExtension();
             $file->storeAs('/uploads',$filename);
         }
+        $nidfilename=$user->image;
+        if($request->hasFile('nid_image')){
+            $file=$request->file('nid_image');
+            $nidfilename=date('Ymdhis').'.'.$file->getClientOriginalExtension();
+            $file->storeAs('/uploads',$nidfilename);
+        }
         $user->update([
             'name'=>$request->name,
             'email'=>$request->email,
             'address'=>$request->address,
             'image'=>$filename,
+            'nid_image'=>$nidfilename
         ]);
 
         return redirect()->route('user.profile');

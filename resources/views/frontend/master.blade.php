@@ -79,7 +79,6 @@
     @endif
 
    @include('frontend.fixed.navbar')
-  <div class="container" style="margin-top: 200px">
     <div class="main">
       <div class="container">
         @yield('content')

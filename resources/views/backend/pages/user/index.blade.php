@@ -11,7 +11,8 @@
       <th scope="col">Image</th>
       <th scope="col">address</th>
       <th scope="col">email</th>
-      <th scope="col">Action</th>   
+      <th scope="col">NID</th>
+      <th scope="col">Role</th>   
     </tr>
   </thead>
   <tbody>
@@ -21,7 +22,11 @@
       <td>{{$data->name}}</td>
       <td><img src="{{url('/uploads/'.$data->image)}}" alt=""></td>
       <td>{{$data->address}}</td>
-      <td>{{$data->email}}</td>   
+      <td>{{$data->email}}</td>  
+     
+      <td><img src="{{url('/uploads/'.$data->nid_image)}}" alt=""></td>
+      <td>{{$data->role}}</td>
+      
       <td>
       <a href=""><button type="button" class="btn btn-success">View</button></a>
       <a href="{{route('backend.user.edit',$data->id)}}"><button type="button" class="btn btn-primary">Edit</button></a>

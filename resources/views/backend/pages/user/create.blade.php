@@ -18,6 +18,10 @@
     <input type="file" class="form-control" id="image" name='image'>
   </div> 
   <div class="form-group">
+    <label for="nid_image">NID</label>
+    <input type="file" class="form-control" id="nid_image" name='nid_image'  placeholder="Enter your NID">
+  </div> 
+  <div class="form-group">
     <label for="email">Email address</label>
     <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
   </div>

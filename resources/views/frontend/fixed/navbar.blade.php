@@ -2,19 +2,29 @@
   <div class="container">
     <div class="menu-bg-wrap">
       <div class="site-navigation">
-        <a href="index.html" class="logo m-0 float-start">Property</a>
+        <a href="index.html" class="logo m-0 float-start">EverNest</a>
 
         <ul
           class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end"
         >
           <li class="active"><a href="{{ route('home') }}">Home</a></li>
-          <li>
-            <a href="{{ route('frontend.properties') }}">Properties</a>
-          </li>
+          @if(auth()->user())
+          @auth
+          @if(auth()->user()->role=='buyer')
+          <li><a href="{{ route('frontend.properties') }}">Buy Properties</a></li>
+          @endif
+          @endauth
+          @endif
+          @if(auth()->user())
+          @auth
+          @if(auth()->user()->role=='seller')
+          <li><a href="{{ route('property.sell') }}">Sell Properties</a></li>
+          @endif
+          @endauth
+          @endif
           <li><a href="{{ route('front.project') }}">Projects</a></li>
-          <li><a href="{{ route('aboutus') }}">About</a></li>
           <li><a href="{{ route('contactus') }}">Contact Us</a></li>
-          <li><a href="{{ route('property.sell') }}">Sell Projects</a></li>
+          <li><a href="{{ route('aboutus') }}">About Us</a></li>
           @if (auth()->user())
           <li>
 
