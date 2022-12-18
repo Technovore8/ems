@@ -13,6 +13,14 @@
         <label for="property_id">Property id</label>
     <input type="property_id" class="form-control" id="property_id" name="property_id" placeholder="Enter property id"value="{{old('property_id',$booking->property_id)}}">
     </div>
+    <div class="form-group">
+      <label for="status">Status</label>
+      <select name="status" id="status">
+        <option value="pending">Pending</option>
+        <option value="approved">Approved</option>
+        <option value="reject">Reject</option>
+      </select>
+    </div>
    
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>

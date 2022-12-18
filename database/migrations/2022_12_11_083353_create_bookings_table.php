@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignID('user_id')->constrained('users')->restrictOnDelete()->nullable();
             $table->foreignId('property_id')->constrained('properties')->restrictOnDelete()->nullable();
+            $table->string('status')->default('pending');
             $table->timestamps();
         });
     }

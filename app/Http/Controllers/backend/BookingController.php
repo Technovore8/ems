@@ -52,7 +52,8 @@ class BookingController extends Controller
         ]);
         $booking->update([
             'user_id'=>$request->$user_id,
-            'property_id'=>$request->property_id
+            'property_id'=>$request->property_id,
+            'status'=>$request->status
         ]);
         Toastr::success('booking updated successfuly', 'success');
         return redirect()->route('backend.booking.index');

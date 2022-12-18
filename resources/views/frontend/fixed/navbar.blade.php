@@ -2,7 +2,7 @@
   <div class="container">
     <div class="menu-bg-wrap">
       <div class="site-navigation">
-        <a href="index.html" class="logo m-0 float-start">EverNest</a>
+        <a href="{{ route('home') }}" class="logo m-0 float-start">EverNest</a>
 
         <ul
           class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end"

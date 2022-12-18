@@ -9,6 +9,8 @@
       <th scope="col">#</th>
       <th scope="col">User</th>
       <th scope="col">Property</th>
+      <th scope="col">Status</th>
+      <th scope="col">Action</th>
       
     </tr>
   </thead>
@@ -18,6 +20,7 @@
       <th scope="row">{{$data->id}}</th>
       <td>{{$data->user->name}}</td>
       <td>{{$data->property->name}}</td>
+      <td>{{$data->status}}</td>
       <td>
       <a href=""><button type="button" class="btn btn-success">View</button></a>
       <a href="{{route('backend.booking.edit',$data->id)}}"><button type="button" class="btn btn-primary">Edit</button></a>
