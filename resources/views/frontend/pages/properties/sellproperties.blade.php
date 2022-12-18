@@ -35,12 +35,22 @@
       <input type="text" class="form-control" id="text" name="details" placeholder="Project details">
     </div>
     <div class="form-group">
-      <label for="price">Price</label>
+      <label for="price">Finencial Details</label>
       <input type="text" class="form-control" id="text" name="price" placeholder="Property ">
     </div>
+    
+    
     <div class="form-group">
       <label for="image">Upload an Image</label>
       <input type="file" class="form-control" id="image" name='image'>
+    </div>
+    <div class="form-group">
+      <label for="nid_image">NID</label>
+      <input type="file" class="form-control" id="nid_image" name='nid_image'>
+   
+    <div class="form-group">
+        <label for="khotian_image">Khotian/porha no</label>
+        <input type="file" class="form-control" id="khotian_image" name='khotian_image'>
     </div> 
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>

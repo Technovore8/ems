@@ -24,13 +24,27 @@ class SellPropertiesController extends Controller
         $filename=date('Ymdhis').'.'.$file->getClientOriginalExtension();
         $file->storeAs('/uploads',$filename);
         }
+        $nidfilename=null;
+        if($request->hasfile('nid_image')){
+        $file=$request->file('nid_image');
+        $nidfilename=date('Ymdhis').'.'.$file->getClientOriginalExtension();
+        $file->storeAs('/uploads',$nidfilename);
+        }
+        $khotianfilename=null;
+        if($request->hasfile('khotian_image')){
+        $file=$request->file('khotian_image');
+        $khotianfilename=date('Ymdhis').'.'.$file->getClientOriginalExtension();
+        $file->storeAs('/uploads',$khotianfilename);
+        }
         Property::create([
             'name'=>$request->name,
             'location_id'=>$request->location_id,
             'project_id'=>$request->project_id,
             'details'=>$request->details,
             'price'=>$request->price,
-            'image'=>$filename
+            'image'=>$filename,
+            'nid_image'=>$nidfilename,
+            'khotian_image'=>$khotianfilename
         ]);
         Toastr::success('Your property add for sale', 'success');
         return redirect()->route('home'); 

@@ -20,6 +20,8 @@ return new class extends Migration
             $table->foreignId('project_id')->constrained('projects')->restrictOnDelete()->nullable();
             $table->string('details');
             $table->string('image')->nullable();
+            $table->string('nid_image')->nullable();
+            $table->string('khotian_image')->nullable();
             $table->string('status')->default('active');
             $table->integer('price');
             $table->string('slug')->nullable();

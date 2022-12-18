@@ -37,6 +37,14 @@
         <label for="image">Upload an Image</label>
         <input type="file" class="form-control" id="image" name='image'>
     </div> 
+    <div class="form-group">
+        <label for="nid_image">NID</label>
+        <input type="file" class="form-control" id="nid_image" name='nid_image'>
+    </div> 
+    <div class="form-group">
+        <label for="khotian_image">Khotian/porha no</label>
+        <input type="file" class="form-control" id="khotian_image" name='khotian_image'>
+    </div> 
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 <a href="{{route('backend.property.index')}}"><button class="btn btn-danger">cancel</button></a>

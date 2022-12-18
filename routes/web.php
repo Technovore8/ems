@@ -2,18 +2,20 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BookController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\admincontroller;
+use App\Http\Controllers\AgentController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\AboutusController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ContactusController;
 use App\Http\Controllers\PropertiesController;
+
+
+
 use App\Http\Controllers\backend\UserController;
 use App\Http\Controllers\BuyPropertiesController;
-
-
-
 use App\Http\Controllers\SellPropertiesController;
 use App\Http\Controllers\backend\BookingController;
 use App\Http\Controllers\backend\ContactController;
@@ -22,9 +24,8 @@ use App\Http\Controllers\backend\LocationController;
 use App\Http\Controllers\backend\PropertyController;
 use App\Http\Controllers\backend\ScheduleController;
 use App\Http\Controllers\backend\HomeController as backendHomecontroller;
-use App\Http\Controllers\backend\LocationController as backendLocationController;
-use App\Http\Controllers\BookController;
 use App\Http\Controllers\ProjectController as ControllersProjectController;
+use App\Http\Controllers\backend\LocationController as backendLocationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -75,6 +76,7 @@ Route::get('/contactus',[ContactusController::class,'contactus'])->name('contact
 Route::post('/contactus-message',[ContactusController::class,'store'])->name('contactus.message');
 //search page
 Route::get('/search',[SearchController::class,'search'])->name('search');
+
 
 
 

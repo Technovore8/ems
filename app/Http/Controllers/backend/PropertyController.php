@@ -68,6 +68,18 @@ Toastr::success('property created successfuly', 'success');
           $filename=date('Ymdhis').'.'.$file->getClientOriginalExtension();
           $file->storeAs('/uploads',$filename);
       }
+      $nidfilename=null;
+      if($request->hasFile('nid_image')){
+          $file=$request->file('nid_image');
+          $nidfilename=date('Ymdhis').'.'.$file->getClientOriginalExtension();
+          $file->storeAs('/uploads',$nidfilename);
+      }
+      $khotianfilename=null;
+      if($request->hasFile('khotian_image')){
+          $file=$request->file('khotian_image');
+          $khotianfilename=date('Ymdhis').'.'.$file->getClientOriginalExtension();
+          $file->storeAs('/uploads',$khotianfilename);
+      }
       $property->update([
         'name'=>$request->name,
         'location_id'=>$request->location_id,
@@ -75,6 +87,8 @@ Toastr::success('property created successfuly', 'success');
         'details'=>$request->details,
         'slug'=>Str::slug($request->name),
         'image'=>$filename,
+        'nid_image'=>$nidfilename,
+        'khotian_image'=>$khotianfilename,
         'price'=>$request->price,
       ]);
       Toastr::success('property updated successfuly', 'success');
