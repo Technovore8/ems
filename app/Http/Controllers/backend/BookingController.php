@@ -7,6 +7,7 @@ use App\Models\Booking;
 use App\Models\Property;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Brian2694\Toastr\Facades\Toastr;
 
 class BookingController extends Controller
 {
@@ -32,6 +33,7 @@ class BookingController extends Controller
             'user_id'=>$request->user_id,
             'property_id'=>$request->property_id
         ]);
+        Toastr::success('bookings created successfuly', 'success');
         return redirect()->route('backend.booking.index');
     }
 
@@ -52,11 +54,13 @@ class BookingController extends Controller
             'user_id'=>$request->$user_id,
             'property_id'=>$request->property_id
         ]);
+        Toastr::success('booking updated successfuly', 'success');
         return redirect()->route('backend.booking.index');
     }
 
     public function delete($id){
         $booking=Booking::find($id)->delete();
+        Toastr::error('booking deleted successfuly', 'success');
         return redirect()->route('backend.booking.index');
     }
 }

@@ -6,6 +6,7 @@ use App\Models\Project;
 use App\Models\Location;
 use App\Models\Property;
 use Illuminate\Http\Request;
+use Brian2694\Toastr\Facades\Toastr;
 
 class SellPropertiesController extends Controller
 {
@@ -30,7 +31,8 @@ class SellPropertiesController extends Controller
             'details'=>$request->details,
             'price'=>$request->price,
             'image'=>$filename
-            ]);
+        ]);
+        Toastr::success('Your property add for sale', 'success');
         return redirect()->route('home'); 
 
     }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
@@ -16,15 +17,18 @@ class AuthController extends Controller
         // dd($request->all());
         $variable=$request->except('_token');
         if (Auth::attempt($variable)){
+            Toastr::success('login successfull', 'success');
             return redirect()->route('home');
         }
         else{
+            Toastr::error('Invalid credentials', 'error');
             return redirect()->back();
         }
     }
 
     public function logout(){
         Auth::logout();
+        Toastr::success('Logoute successfull', 'success');
         return redirect()->route('home');
     }
 
@@ -62,6 +66,7 @@ class AuthController extends Controller
             'nid_image'=>$nidfilename,
             'role'=>$request->role
         ]);
+        Toastr::success('Your registration completed please login', 'success');
         return redirect()->route('login');
     }
 
@@ -104,7 +109,7 @@ class AuthController extends Controller
             'image'=>$filename,
             'nid_image'=>$nidfilename
         ]);
-
+        Toastr::success('Profile updated successfuly', 'success');
         return redirect()->route('user.profile');
 
 

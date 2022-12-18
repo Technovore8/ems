@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Contact;
 use Illuminate\Http\Request;
+use Brian2694\Toastr\Facades\Toastr;
 
 class ContactusController extends Controller
 {
@@ -22,6 +23,7 @@ class ContactusController extends Controller
            'subject'=>$request->subject,
            'message'=>$request->message 
         ]);
+        Toastr::success('Thank you for connecting us', 'success');
         return redirect()->back();
     } 
 }
