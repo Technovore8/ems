@@ -1,9 +1,7 @@
 @extends('frontend.master')
 @section('content')
 
-<section class="container">
-  <div class="container">
-    <div class="container">
+<section class="container mt-9rem">
       <div class="row">
         @foreach ($properties as $data)
           <div class="col-md-4">
@@ -20,8 +18,6 @@
           </div>
                 @endforeach
       </div>
-    </div>
-  </div>
 </section>
 
 @endsection
