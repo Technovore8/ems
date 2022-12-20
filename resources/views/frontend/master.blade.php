@@ -32,6 +32,9 @@
       .mt-9rem{
         margin-top:9rem !important;
       }
+      .pt-9rem{
+        padding-top:9rem !important;
+      }
     </style>
   </head>
   <body>

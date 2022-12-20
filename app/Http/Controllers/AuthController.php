@@ -102,7 +102,7 @@ class AuthController extends Controller
             $nidfilename=date('Ymdhis').'.'.$file->getClientOriginalExtension();
             $file->storeAs('/uploads',$nidfilename);
         }
-        $user->update([
+        User::find($id)->update([
             'name'=>$request->name,
             'email'=>$request->email,
             'address'=>$request->address,

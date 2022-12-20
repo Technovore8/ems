@@ -1,6 +1,6 @@
 @extends('frontend.master')
 @section('content')
-<section class="h-100 h-custom" style="background-color: #005555 ;">
+<section class="h-100 h-custom pt-9rem" style="background-color: #005555 ;">
   <div class="container py-8 h-10">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-lg-8 col-xl-5">
