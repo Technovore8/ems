@@ -27,7 +27,7 @@
     <input type="text" class="form-control" id="text" name="details" placeholder="Project details">
   </div>
 
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary ">Submit</button>
 </form>
 <a href="{{route('backend.project.index')}}"><button class="btn btn-danger">cancel</button></a>
 @endsection
