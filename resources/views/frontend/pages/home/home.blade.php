@@ -195,7 +195,7 @@
       >
         <div class="counter-wrap mb-5 mb-lg-0">
           <span class="number"
-            ><span class="countup text-primary">7191</span></span
+            ><span class="countup text-primary">530</span></span
           >
           <span class="caption text-black-50"># of Agents</span>
         </div>

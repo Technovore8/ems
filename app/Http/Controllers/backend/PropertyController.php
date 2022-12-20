@@ -87,6 +87,7 @@ Toastr::success('property created successfuly', 'success');
         'details'=>$request->details,
         'slug'=>Str::slug($request->name),
         'image'=>$filename,
+        'status'=>$request->status,
         'nid_image'=>$nidfilename,
         'khotian_image'=>$khotianfilename,
         'price'=>$request->price,

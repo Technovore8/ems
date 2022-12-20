@@ -1,11 +1,11 @@
 @extends('frontend.master')
 @section('content')
 <div class="section section-properties">
-  <div class="container">
+  <div class="container mt-9rem">
     <div class="row">
       
         <div class="property-item mb-30">
-          <a href="property-single.html" class="img">
+          <a href="" class="img">
             <img src="{{url('/uploads/',$property->image)}}" alt="Image" class="img-fluid" />
           </a>
           <div class="property-content">

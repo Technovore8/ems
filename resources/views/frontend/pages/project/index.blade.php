@@ -1,6 +1,6 @@
 @extends('frontend.master')
 @section('content')
-<section class="features-1">
+<section class="features-1" style="margin-top:9rem !important">
     <div class="container">
       <div class="row">
         @foreach ($projects as $data)

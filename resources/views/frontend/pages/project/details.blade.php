@@ -1,6 +1,6 @@
 @extends('frontend.master')
 @section('content')
-<div class="container">
+<div class="container" style="margin-top:9rem !important">
     <div class="row">
       
         <div class="property-item mb-30">

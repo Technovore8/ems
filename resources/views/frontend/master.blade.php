@@ -22,10 +22,17 @@
     <link rel="stylesheet" href="{{url('css/tiny-slider.css')}}" />
     <link rel="stylesheet" href="{{url('css/aos.css')}}" />
     <link rel="stylesheet" href="{{url('css/style.css')}}" />
-    <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
+    <link rel="stylesheet" href="{{url('http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css')}}">
     <title>
       EverNEST
     </title>
+
+    <style>
+
+      .mt-9rem{
+        margin-top:9rem !important;
+      }
+    </style>
   </head>
   <body>
     <div class="site-mobile-menu site-navbar-target">
@@ -36,6 +43,7 @@
       </div>
       <div class="site-mobile-menu-body"></div>
     </div>
+
     @if (Route::is('home'))
     <div class="hero">
       <div class="hero-slide">
@@ -78,7 +86,7 @@
 
    @include('frontend.fixed.navbar')
     <div class="main">
-      <div class="container">
+      <div class="container" style="min-height:80vh">
         @yield('content')
       </div>
     </div>

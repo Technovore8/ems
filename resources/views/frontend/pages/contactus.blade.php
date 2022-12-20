@@ -1,6 +1,6 @@
 @extends('frontend.master')
 @section('content')
-<div class=" mt-5 section">
+<div class="section" style="padding-top:9rem !important">
   <div class="container">
     <div class="row">
       <div

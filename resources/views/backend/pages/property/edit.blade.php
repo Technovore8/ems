@@ -45,6 +45,10 @@
         <label for="khotian_image">Khotian/porha no</label>
         <input type="file" class="form-control" id="khotian_image" name='khotian_image'>
     </div> 
+    <select name="status" id="status" class="form-group">
+                <option value="approve">Approve</option>
+                <option value="reject">Reject</option>
+              </select><br>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 <a href="{{route('backend.property.index')}}"><button class="btn btn-danger">cancel</button></a>

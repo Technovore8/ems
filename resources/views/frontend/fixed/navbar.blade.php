@@ -7,24 +7,24 @@
         <ul
           class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end"
         >
-          <li class="active"><a href="{{ route('home') }}">Home</a></li>
+          <li class=" {{(request()->is("/")) ? 'active': '' }} "><a href="{{ route('home') }}">Home</a></li>
           @if(auth()->user())
           @auth
           @if(auth()->user()->role=='buyer')
-          <li><a href="{{ route('frontend.properties') }}">Buy Properties</a></li>
+          <li class=" {{(request()->is("all-property-index/*")) ? 'active': '' }} "><a href="{{ route('frontend.properties') }}">Buy Properties</a></li>
           @endif
           @endauth
           @endif
           @if(auth()->user())
           @auth
           @if(auth()->user()->role=='seller')
-          <li><a href="{{ route('property.sell') }}">Sell Properties</a></li>
+          <li class=" {{(request()->is("/")) ? 'active': '' }} "><a href="{{ route('property.sell') }}">Sell Properties</a></li>
           @endif
           @endauth
           @endif
-          <li><a href="{{ route('front.project') }}">Projects</a></li>
-          <li><a href="{{ route('contactus') }}">Contact Us</a></li>
-          <li><a href="{{ route('aboutus') }}">About Us</a></li>
+          <li class=" {{(request()->is("front-project-index")) ? 'active': '' }} "><a href="{{ route('front.project') }}">Projects</a></li>
+          <li class=" {{(request()->is("contactus")) ? 'active': '' }} "><a href="{{ route('contactus') }}">Contact Us</a></li>
+          <li class=" {{(request()->is("aboutus")) ? 'active': '' }} "><a href="{{ route('aboutus') }}">About Us</a></li>
           @if (auth()->user())
           <li>
 

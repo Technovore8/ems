@@ -16,13 +16,13 @@ return new class extends Migration
         Schema::create('properties', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->foreignId('location_id')->constrained('locations')->restrictOnDelete()->nullable();
-            $table->foreignId('project_id')->constrained('projects')->restrictOnDelete()->nullable();
+            $table->foreignId('location_id')->nullable()->constrained('locations')->restrictOnDelete();
+            $table->foreignId('project_id')->nullable()->constrained('projects')->restrictOnDelete();
             $table->string('details');
             $table->string('image')->nullable();
             $table->string('nid_image')->nullable();
             $table->string('khotian_image')->nullable();
-            $table->string('status')->default('active');
+            $table->string('status')->default('pending');
             $table->integer('price');
             $table->string('slug')->nullable();
             $table->timestamps();
