@@ -13,7 +13,6 @@ class ContactusController extends Controller
     }
     
     public function store(Request $request){
-       // dd($request);
         $request->validate([
             'message'=>'required'
         ]);
@@ -25,5 +24,13 @@ class ContactusController extends Controller
         ]);
         Toastr::success('Thank you for connecting us', 'success');
         return redirect()->back();
-    } 
+    }
+    public function message(){
+        $message = Contact::all();
+        return view("backend.pages.contact.index",compact("message"));
+    }
+    public function delete($id){
+        Contact::find($id)->delete();
+        return redirect()->back();
+    }
 }

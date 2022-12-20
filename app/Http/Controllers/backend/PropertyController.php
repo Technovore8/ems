@@ -101,4 +101,8 @@ Toastr::success('property created successfuly', 'success');
         Toastr::error('property deleted successfuly', 'success');
         return redirect()->route('backend.property.index');
     }
+    public function view($id){
+        $property=Property::find($id);
+        return view('backend.pages.property.view',compact("property"));
+    }
 }

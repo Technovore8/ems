@@ -101,5 +101,11 @@
               <span class="menu-title">Documentation</span>
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('message')}}">
+              <i class="icon-paper menu-icon"></i>
+              <span class="menu-title">Message</span>
+            </a>
+          </li>
         </ul>
       </nav>

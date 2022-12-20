@@ -75,6 +75,8 @@ Route::get('/aboutus',[AboutusController::class,'aboutus'])->name('aboutus');
 //Contactus
 Route::get('/contactus',[ContactusController::class,'contactus'])->name('contactus');
 Route::post('/contactus-message',[ContactusController::class,'store'])->name('contactus.message');
+Route::get('/message',[ContactusController::class,'message'])->name('message');
+Route::get('/message/delete/{id}',[ContactusController::class,'delete'])->name('message.delete');
 //search page
 Route::get('/search',[SearchController::class,'search'])->name('search');
 
@@ -138,6 +140,7 @@ Route::get('/property-create',[PropertyController::class,'create'])->name('backe
 Route::get('/property-index',[PropertyController::class,'index'])->name('backend.property.index');
 Route::post('/property-store',[PropertyController::class,'store'])->name('backend.property.store');
 Route::get('/property-edit/{id}',[PropertyController::class,'edit'])->name('backend.property.edit');
+Route::get('/property-view/{id}',[PropertyController::class,'view'])->name('backend.property.view');
 Route::put('/property-update/{id}',[PropertyController::class,'update'])->name('backend.property.update');
 Route::get('/Property-delete/{id}',[PropertyController::class,'delete'])->name('backend.property.delete');
 

@@ -7,8 +7,6 @@
       <div class="row">
         @foreach ($properties as $data)
           <div class="col-md-4">
-      
-      
             <div class="box-feature">
               <span ><img width="200px" src="{{url('/uploads/',$data->image)}}" alt="" srcset=""></span>
               <h3 class="mb-3">{{ $data->location->name }}</h3>

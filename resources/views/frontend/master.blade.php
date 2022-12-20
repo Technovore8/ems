@@ -84,7 +84,12 @@
     </div>
     @endif
 
+    @if(!request()->is("registration"))
    @include('frontend.fixed.navbar')
+    @endif
+
+
+
     <div class="main">
       <div class="container" style="min-height:80vh">
         @yield('content')
@@ -93,7 +98,9 @@
   </div>
     {{-- #agents --}}
 
+    @if(!request()->is("registration"))
     @includeIf('frontend.fixed.footer')
+    @endif
     <!-- Preloader -->
     <div id="overlayer"></div>
     <div class="loader">
