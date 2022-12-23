@@ -56,7 +56,7 @@
     <input type="file" class="form-control" id="khotian_image" name='khotian_image' required>
   </div> 
   <div class="form-group">
-    <label for="dolil_image">Land doc./Dolil</label>
+    <label for="dolil">Land doc./Dolil</label>
     <input type="file" class="form-control" id="dolil" name='dolil' required>
   </div> 
   <button type="submit" class="btn btn-primary">Submit</button>

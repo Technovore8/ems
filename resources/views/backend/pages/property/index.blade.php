@@ -31,7 +31,7 @@
                         <td><img src="{{ url('/uploads/', $data->image) }}" alt=""></td>
                         <td><img src="{{ url('/uploads/', $data->nid_image) }}" alt=""></td>
                         <td><img src="{{ url('/uploads/', $data->khotian_image) }}" alt=""></td>
-                        <td><img src="{{ url('/uploads/', $data->dolil_image) }}" alt=""></td>
+                        <td><img src="{{ url('/uploads/', $data->dolil) }}" alt=""></td>
                         <td>{{ $data->status }}</td>
                         <td>{{ $data->price }}</td>
                         <td>

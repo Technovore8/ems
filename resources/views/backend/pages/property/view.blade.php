@@ -1,7 +1,7 @@
 @extends("backend.master")
 
 @section("content")
-    {{-- @dd($property) --}}
+   
 
     <div class="container">
         <div class="row my-5">
@@ -12,7 +12,7 @@
                     <img src="{{ url('/uploads/', $property->image) }}" alt="Image" class="img-fluid" style="height:200px; " />
                     <img src="{{ url('/uploads/', $property->nid_image) }}" alt="Image" class="img-fluid" style="height:200px; " />
                     <img src="{{ url('/uploads/', $property->khotian_image) }}" alt="Image" class="img-fluid" style="height:200px; " />
-                    <img src="{{ url('/uploads/', $property->dolil_image) }}" alt="Image" class="img-fluid" style="height:200px; " />
+                    <img src="{{ url('/uploads/', $property->dolil) }}" alt="Image" class="img-fluid" style="height:200px; " />
                     <div class="py-3">
                         <span style="font-weight:bold;">{{ $property->price }} BDT {{-- ({{$data->negotiable}}) --}} </span>
                         <p>{{ $property->details}}</p>
@@ -25,7 +25,7 @@
                                 Approve
                             </button>
                         </form>
-                        <a class="btn btn-danger">Reject</a>
+                        
                     </div>
                 </div>
             </div>

@@ -22,13 +22,13 @@ class BookingController extends Controller
     public function index()
     {
         $book = Booking::with('user', 'property')->get();
-        // dd($booking);
+        
         return view('backend.pages.booking.index', compact('book'));
     }
 
     public function store(Request $request)
     {
-        // dd($request);
+        
         $request->validate([
             'user_id' => 'required',
             'property_id' => 'required'

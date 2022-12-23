@@ -5,12 +5,12 @@
             <div class="row">
 
                 <div class="property-item mb-30">
-                    @dd($booking)
-                    <a href="{{ url('/uploads/', $booking->property->name) }}" class="img btn-gallery">
-                        <img src="{{ url('/uploads/', $booking->image) }}" alt="Image" class="img-fluid" />
-                    </a>
+                    {{-- @dd($booking) --}}
                     <a href="{{ url('/uploads/', $booking->image) }}" class="img btn-gallery">
                         <img src="{{ url('/uploads/', $booking->image) }}" alt="Image" class="img-fluid" />
+                    </a>
+                    <a href="{{ url('/uploads/', $booking->nid_image) }}" class="img btn-gallery">
+                        <img src="{{ url('/uploads/', $booking->nid_image) }}" alt="Image" class="img-fluid" />
                     </a>
                     <a href="{{ url('/uploads/', $booking->image) }}" class="img btn-gallery">
                         <img src="{{ url('/uploads/', $booking->image) }}" alt="Image" class="img-fluid" />

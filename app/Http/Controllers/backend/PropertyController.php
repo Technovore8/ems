@@ -77,7 +77,7 @@ class PropertyController extends Controller
                 'phone' => $request->phone,
                 'nid_image' => $nidfilename,
                 'khotian_image' => $khotianfilename,
-                'dolil_image' => $dolilfilename
+                'dolil' => $dolilfilename
 
             ]);
             Toastr::success('property created successfuly', 'success');
@@ -123,8 +123,8 @@ class PropertyController extends Controller
             $file->storeAs('/uploads', $khotianfilename);
         }
         $dolilfilename = null;
-        if ($request->hasFile('dolil_image')) {
-            $file = $request->file('dolil_image');
+        if ($request->hasFile('dolil')) {
+            $file = $request->file('dolil');
             $dolilfilename = date('Ymdhis') . '.' . $file->getClientOriginalExtension();
             $file->storeAs('/uploads', $dolilfilename);
         }
@@ -140,7 +140,7 @@ class PropertyController extends Controller
             'status' => $request->status,
             'nid_image' => $nidfilename,
             'khotian_image' => $khotianfilename,
-            'dolil_image' => $dolilfilename,
+            'dolil' => $dolilfilename,
             'price' => $request->price,
         ]);
     } 

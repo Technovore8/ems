@@ -40,8 +40,8 @@ class SellPropertiesController extends Controller
             $file->storeAs('/uploads', $khotianfilename);
         }
         $dolilfilename = null;
-        if ($request->hasfile('dolil_image')) {
-            $file = $request->file('dolil_image');
+        if ($request->hasfile('dolil')) {
+            $file = $request->file('dolil');
             $dolilfilename = date('Ymdhis') . '.' . $file->getClientOriginalExtension();
             $file->storeAs('/uploads', $dolilfilename);
         }
@@ -56,10 +56,10 @@ class SellPropertiesController extends Controller
                 'image' => $filename,
                 'nid_image' => $nidfilename,
                 'khotian_image' => $khotianfilename,
-                'dolil_image' => $dolilfilename
+                'dolil' => $dolilfilename
             ]);
 
-            Toastr::success('Your property add for sale', 'success');
+            Toastr::success('Your property added for sale', 'success');
         } catch (Exception $err) {
             dd($err);
         }
