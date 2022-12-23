@@ -14,6 +14,7 @@
                     <th scope="col">Image</th>
                     <th scope="col">NID</th>
                     <th scope="col">Khotian/porcha</th>
+                    <th scope="col">Land doc./Dolil</th>
                     <th scope="col">Status</th>
                     <th scope="col">Price</th>
                     <th scope="col">Action</th>
@@ -30,6 +31,7 @@
                         <td><img src="{{ url('/uploads/', $data->image) }}" alt=""></td>
                         <td><img src="{{ url('/uploads/', $data->nid_image) }}" alt=""></td>
                         <td><img src="{{ url('/uploads/', $data->khotian_image) }}" alt=""></td>
+                        <td><img src="{{ url('/uploads/', $data->dolil_image) }}" alt=""></td>
                         <td>{{ $data->status }}</td>
                         <td>{{ $data->price }}</td>
                         <td>
@@ -38,7 +40,7 @@
                                     class="btn btn-primary">Edit</button></a>
                             <a href="{{ route('backend.property.delete', $data->id) }}"><button type="button"
                                     class="btn btn-danger"
-                                    onclick="return confirm('Are you sure to delete?')">Delete</button></a>
+                                    onclick="return confirm('Are you sure you want to delete?')">Delete</button></a>
                         </td>
                     </tr>
                 @endforeach

@@ -8,6 +8,7 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Brian2694\Toastr\Facades\Toastr;
+use Exception;
 
 class ProjectController extends Controller
 {
@@ -26,6 +27,7 @@ class ProjectController extends Controller
             $filename=date('Ymdhis').'.'.$file->getClientOriginalExtension();
             $file->storeAs('/uploads',$filename);
         }
+        try{
         Project::create([
             'name'=>$request->name,
             'location_id'=>$request->location_id,
@@ -33,6 +35,10 @@ class ProjectController extends Controller
             'details'=>$request->details,
             'slug'=>Str::slug($request->name),
         ]);
+    } 
+    catch (Exception $err) {
+        
+    }
         Toastr::success('project created successfuly', 'success');
         return redirect()->route('backend.project.index');
     }
@@ -54,12 +60,17 @@ class ProjectController extends Controller
             $filename=date('Ymdhis').'.'.$file->getClientOriginalExtension();
             $file->storeAs('/uploads',$filename);
         }
+        try{
         $project->update([
             'name'=>$request->name,
             'location_id'=>$request->location_id,
             'image'=>$filename,
             'details'=>$request->details,
         ]);
+    } 
+    catch (Exception $err) {
+        
+    }
         Toastr::success('project updated successfuly', 'success');
         return redirect()->route('backend.project.index');
     }

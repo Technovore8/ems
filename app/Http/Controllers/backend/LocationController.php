@@ -7,6 +7,7 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Brian2694\Toastr\Facades\Toastr;
+use Exception;
 
 class LocationController extends Controller
 {
@@ -46,10 +47,16 @@ class LocationController extends Controller
             $filename=date('Ymdhis').'.'.$file->getClientOriginalExtension();
             $file->storeAs('/uploads',$filename);
         }
+        try{
         $location->update([
             'name'=>$request->name,
 
         ]);
+    } 
+    catch (Exception $err) {
+        
+    }
+
         Toastr::success('Location updated successfuly', 'success');
         return redirect()->route('backend.location.index');
     }

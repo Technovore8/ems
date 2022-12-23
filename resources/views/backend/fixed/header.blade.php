@@ -21,7 +21,7 @@
               <a href="">{{ auth()->user()->name }}</a> 
           </li>
           <li class="nav-item dropdown">
-            <a href="">Logout</a> 
+            <a href="{{route('logout')}}">Logout</a> 
           </li>
           @endif
           

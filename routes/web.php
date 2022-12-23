@@ -48,6 +48,10 @@ Route::get('/logout',[AuthController::class,'logout'])->name('logout');
 Route::get('/registration',[AuthController::class,'registration'])->name('registration');
 Route::post('/registration-post',[AuthController::class,'store'])->name('reg.post');
 
+
+
+
+
 #profile
 Route::get('/user-profile',[AuthController::class,'profile'])->name('user.profile');
 Route::get('/profile-edit/{id}',[AuthController::class,'edit'])->name('profile.edit');
@@ -85,8 +89,11 @@ Route::get('/search',[SearchController::class,'search'])->name('search');
 
 
 //backend
+
+
+Route::group(["middleware"=>["auth","checkAdmin"],"prefix"=>"admin"],function(){
 //home page
-Route::get('/admin',[admincontroller::class,'admin'])->name('admin');
+Route::get('/',[admincontroller::class,'admin'])->name('admin');
 
 Route::get('/home',[backendHomeController::class,'home'])->name('adminhome');
 
@@ -114,6 +121,7 @@ Route::get('/location-delete/{id}',[LocationController::class,'delete'])->name('
 Route::get('/booking-create',[BookingController::class,'create'])->name('backend.booking.create');
 Route::get('/booking-index',[BookingController::class,'index'])->name('backend.booking.index');
 Route::post('/booking-store',[BookingController::class,'store'])->name('backend.booking.store');
+Route::get('/booking-view/{id}',[BookingController::class,'view'])->name('backend.booking.view');
 Route::get('/booking-edit/{id}',[BookingController::class,'edit'])->name('backend.booking.edit');
 Route::put('/booking-update/{id}',[BookingController::class,'update'])->name('backend.booking.update');
 Route::get('/booking-delete/{id}',[BookingController::class,'delete'])->name('backend.booking.delete');
@@ -141,6 +149,7 @@ Route::get('/property-index',[PropertyController::class,'index'])->name('backend
 Route::post('/property-store',[PropertyController::class,'store'])->name('backend.property.store');
 Route::get('/property-edit/{id}',[PropertyController::class,'edit'])->name('backend.property.edit');
 Route::get('/property-view/{id}',[PropertyController::class,'view'])->name('backend.property.view');
+Route::post('/property-view/{id}',[PropertyController::class,'propertyStatusUpdate'])->name('backend.property.status.update');
 Route::put('/property-update/{id}',[PropertyController::class,'update'])->name('backend.property.update');
 Route::get('/Property-delete/{id}',[PropertyController::class,'delete'])->name('backend.property.delete');
 
@@ -148,3 +157,5 @@ Route::get('/Property-delete/{id}',[PropertyController::class,'delete'])->name('
 
 #contactus
 Route::get('/contact-index',[ContactController::class,'index'])->name('backend.contact.index');
+
+});

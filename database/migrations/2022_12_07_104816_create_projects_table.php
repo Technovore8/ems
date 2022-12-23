@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->foreignId('location_id')->constrained('locations')->restrictOnDelete();
             $table->string('image')->nullable();
-            $table->string('details');
+            $table->string('details')->nullable();
             $table->string('status')->default('active');
             $table->string('slug');
             $table->timestamps();

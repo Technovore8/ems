@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
+use Exception;
 use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
@@ -18,6 +19,9 @@ class AuthController extends Controller
         $variable=$request->except('_token');
         if (Auth::attempt($variable)){
             Toastr::success('login successfull', 'success');
+            if(auth()->user()->role== "admin"){
+                return redirect()->route('admin');
+            }
             return redirect()->route('home');
         }
         else{
@@ -28,7 +32,7 @@ class AuthController extends Controller
 
     public function logout(){
         Auth::logout();
-        Toastr::success('Logoute successfull', 'success');
+        Toastr::success('Log Out successfull', 'success');
         return redirect()->route('home');
     }
 
@@ -57,6 +61,7 @@ class AuthController extends Controller
             $file->storeAs('/uploads',$nidfilename);
         }
         #post data
+        try{
         User::create([
             'name'=>$request->name,
             'email'=>$request->email,
@@ -66,6 +71,10 @@ class AuthController extends Controller
             'nid_image'=>$nidfilename,
             'role'=>$request->role
         ]);
+    } 
+    catch (Exception $err) {
+        
+    }
         Toastr::success('Your registration completed please login', 'success');
         return redirect()->route('login');
     }
@@ -102,6 +111,7 @@ class AuthController extends Controller
             $nidfilename=date('Ymdhis').'.'.$file->getClientOriginalExtension();
             $file->storeAs('/uploads',$nidfilename);
         }
+        try{
         User::find($id)->update([
             'name'=>$request->name,
             'email'=>$request->email,
@@ -109,6 +119,10 @@ class AuthController extends Controller
             'image'=>$filename,
             'nid_image'=>$nidfilename
         ]);
+    } 
+    catch (Exception $err) {
+        
+    }
         Toastr::success('Profile updated successfuly', 'success');
         return redirect()->route('user.profile');
 

@@ -1,7 +1,6 @@
 @extends('backend.master')
 @section('content')
 <h1>Booking List</h1>
-<a href="{{route('backend.booking.create')}}"><button class="btn btn-success">Book property +</button></a>
 <body>
 <table class="table">
   <thead>
@@ -10,6 +9,7 @@
       <th scope="col">User</th>
       <th scope="col">Property</th>
       <th scope="col">Status</th>
+      <th scope="col">Date</th>
       <th scope="col">Action</th>
       
     </tr>
@@ -21,8 +21,9 @@
       <td>{{$data->user->name}}</td>
       <td>{{$data->property->name}}</td>
       <td>{{$data->status}}</td>
+      <td>{{ $data->created_at }}</td>
       <td>
-      <a href=""><button type="button" class="btn btn-success">View</button></a>
+      <a href="{{route('backend.booking.view',$data->id)}}"><button type="button" class="btn btn-success">View</button></a>
       <a href="{{route('backend.booking.edit',$data->id)}}"><button type="button" class="btn btn-primary">Edit</button></a>
       <a href="{{route('backend.booking.delete',$data->id)}}"><button type="button" class="btn btn-danger">Delete</button></a>
       </td> 

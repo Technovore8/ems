@@ -49,6 +49,26 @@
               <input
                 type="text"
                 class="form-control"
+                name="name"
+                placeholder="Name"
+                value= '{{auth()?->user()?->name}}'
+                required
+              />
+            </div>
+            <div class="col-12 mb-3">
+              <input
+                type="text"
+                class="form-control"
+                name="email"
+                placeholder="Email"
+                value='{{auth()?->user()?->email}}'
+                required
+              />
+            </div>
+            <div class="col-12 mb-3">
+              <input
+                type="text"
+                class="form-control"
                 name="subject"
                 placeholder="Subject"
               />

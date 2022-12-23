@@ -96,11 +96,10 @@
     <div class="row justify-content-center text-center mb-5">
       <div class="col-lg-5">
         <h2 class="font-weight-bold heading text-primary mb-4">
-          Let's find home that's perfect for you
+          Let's find land that's perfect for you
         </h2>
         <p class="text-black-50">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
-          enim pariatur similique debitis vel nisi qui reprehenderit.
+          
         </p>
       </div>
     </div>
@@ -118,8 +117,7 @@
           <div class="feature-text">
             <h3 class="heading">2M Properties</h3>
             <p class="text-black-50">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Nostrum iste.
+              
             </p>
           </div>
         </div>
@@ -131,8 +129,7 @@
           <div class="feature-text">
             <h3 class="heading">Top Rated Agents</h3>
             <p class="text-black-50">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Nostrum iste.
+              
             </p>
           </div>
         </div>
@@ -144,8 +141,7 @@
           <div class="feature-text">
             <h3 class="heading">Legit Properties</h3>
             <p class="text-black-50">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Nostrum iste.
+              
             </p>
           </div>
         </div>
@@ -204,7 +200,7 @@
   </div>
 </div>
 
-<div class="section">
+{{-- <div class="section">
   <div class="row justify-content-center footer-cta" data-aos="fade-up">
     <div class="col-lg-7 mx-auto text-center">
       <h2 class="mb-4">Be a part of our growing real state agents</h2>
@@ -220,6 +216,6 @@
     <!-- /.col-lg-7 -->
   </div>
   <!-- /.row -->
-</div>
+</div> --}}
 
 @endsection

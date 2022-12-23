@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Contact;
 use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
+use Exception;
 
 class ContactusController extends Controller
 {
@@ -14,14 +15,21 @@ class ContactusController extends Controller
     
     public function store(Request $request){
         $request->validate([
-            'message'=>'required'
+            'message'=>'required',
+            "email"=>'required',
+            "name"=>'required'
         ]);
+        try{
         Contact::create([
-           'name'=>auth()->user()->name,
-           'email'=>auth()->user()->email,
+           'name'=>$request->name,
+           'email'=>$request->email,
            'subject'=>$request->subject,
            'message'=>$request->message 
         ]);
+    } 
+    catch (Exception $err) {
+        
+    }
         Toastr::success('Thank you for connecting us', 'success');
         return redirect()->back();
     }

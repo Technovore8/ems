@@ -19,9 +19,11 @@ return new class extends Migration
             $table->foreignId('location_id')->nullable()->constrained('locations')->restrictOnDelete();
             $table->foreignId('project_id')->nullable()->constrained('projects')->restrictOnDelete();
             $table->string('details');
-            $table->string('image')->nullable();
-            $table->string('nid_image')->nullable();
-            $table->string('khotian_image')->nullable();
+            $table->string('phone');
+            $table->string('image');
+            $table->string('nid_image');
+            $table->string('khotian_image');
+            $table->string('dolil_image');
             $table->string('status')->default('pending');
             $table->integer('price');
             $table->string('slug')->nullable();

@@ -14,8 +14,7 @@ class PropertiesController extends Controller
     }
 
     public function index(){
-        $properties=Property::with('location','project')->where('status','approve')->get();
-        
+        $properties=Property::with('location','project')->where('status','approved')->get();
         return view('frontend.pages.properties.index',compact('properties'));
     }
 

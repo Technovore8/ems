@@ -8,7 +8,7 @@
       </div>
       <div class="col-lg-6">
         <p class="text-black-50">
-        Realtor.com is affiliated with the National Association of Realtors and uses MLS listings which are sourced from around 580 regional databases and considered the gold standard for quality listings. For this reason, Realtor.com is our pick for most accurate real estate website.
+        EverNEST is affiliated with the National Association of Realtors and uses MLS listings which are sourced from around 580 regional databases and considered the gold standard for quality listings. For this reason, Realtor.com is our pick for most accurate real estate website.
 
 
 

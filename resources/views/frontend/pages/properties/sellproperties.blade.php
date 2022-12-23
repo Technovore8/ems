@@ -15,7 +15,7 @@
           <input type="text" class="form-control" id="name" name="name" placeholder="Enter property name">
       </div>
     <div class="form-group">
-    <label for="location_id">Location Id</label>
+    <label for="location_id">Location Name</label>
       <select name="location_id" class="form-control" id="location_id">
       @foreach($location as $data)
       <option value="{{$data->id}}">{{$data->name}}</option>
@@ -23,7 +23,7 @@
       </select>
     </div> 
     <div class="form-group">
-    <label for="project_id">Project Id</label>
+    <label for="project_id">Project Name</label>
       <select name="project_id" class="form-control" id="project_id">
       @foreach($project as $data)
       <option class="form-control" value="{{$data->id}}">{{$data->name}}</option>
@@ -38,6 +38,10 @@
       <label for="price">Finencial Details</label>
       <input type="text" class="form-control" id="text" name="price" placeholder="Property ">
     </div>
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input type="text" class="form-control" id="phone" name="phone" placeholder="Property ">
+    </div>
     
     
     <div class="form-group">
@@ -51,7 +55,11 @@
     <div class="form-group">
         <label for="khotian_image">Khotian/porha no</label>
         <input type="file" class="form-control" id="khotian_image" name='khotian_image'>
-    </div> 
+    </div>
+    <div class="form-group">
+      <label for="dolil_image">Land doc./Dolil</label>
+      <input type="file" class="form-control" id="dolil_image" name='dolil_image'>
+  </div> 
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
   <a href="{{route('home')}}"><button class="btn btn-danger">cancel</button></a>

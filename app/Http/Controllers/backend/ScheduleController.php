@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
+use Exception;
 use Illuminate\Http\Request;
 
 class ScheduleController extends Controller
@@ -11,7 +13,7 @@ class ScheduleController extends Controller
         return view('backend.pages.schedule.create');
     }
     public function index(){
-        $users=User::get();
+        $users=User::all();
         return view('backend.pages.schedule.index');
     }
     public function store(Request $request){
@@ -29,6 +31,7 @@ class ScheduleController extends Controller
             $file->storeAs('/uploads',$filename);
         }
         #post data
+        try{
         User::create([
             'name'=>$request->name,
             'email'=>$request->email,
@@ -36,6 +39,10 @@ class ScheduleController extends Controller
             'password'=>$request->password,
             'image'=>$filename,
         ]);
+    } 
+    catch (Exception $err) {
+        
+    }
         return redirect()->route('backend.user.index');
     }
 }

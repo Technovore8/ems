@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 class BuyPropertiesController extends Controller
 {
     public function buyproperties(){
-        $properties = Property::all();
+        $properties = Property::where("status","approved")->get();
+        dd($properties);
         return view('frontend.pages.properties.buyproperties',compact('properties'));
     }
     public function singleView($id){

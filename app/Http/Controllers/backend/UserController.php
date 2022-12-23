@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Brian2694\Toastr\Facades\Toastr;
+use Exception;
 
 class UserController extends Controller
 {
@@ -40,6 +41,7 @@ class UserController extends Controller
         }
         
         #post data
+        try{
         User::create([
             'name'=>$request->name,
             'email'=>$request->email,
@@ -48,6 +50,10 @@ class UserController extends Controller
             'image'=>$filename,
             'nid_image'=>$nidfilename
         ]);
+    } 
+    catch (Exception $err) {
+        
+    }
         
     
 
@@ -80,6 +86,7 @@ class UserController extends Controller
             $nidfilename=date('Ymdhis').'.'.$file->getClientOriginalExtension();
             $file->storeAs('/uploads',$nidfilename);
         }
+        try{
         $user->update([
             'name'=>$request->name,
             'email'=>$request->email,
@@ -87,6 +94,10 @@ class UserController extends Controller
             'image'=>$filename,
             'nid_image'=>$nidfilename
         ]);
+    } 
+    catch (Exception $err) {
+        
+    }
         Toastr::success('user updated successfuly', 'success');
         return redirect()->route('backend.user.index');
     }

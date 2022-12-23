@@ -8,11 +8,11 @@
 @csrf
     <div class="form-group">
         <label for="name">Name</label>
-        <input type="text" class="form-control" id="name" name="name" placeholder="Enter project name">
+        <input type="text" class="form-control" id="name" name="name" placeholder="Enter project name" required>
     </div>
     <div class="form-group">
-      <label for="location_id">Location Id</label>
-        <select name="location_id" class="form-control" id="location_id">
+      <label for="location_id">Location Name</label>
+        <select name="location_id" class="form-control" id="location_id" required>
         @foreach($location as $data)
         <option value="{{$data->id}}">{{$data->name}}</option>
         @endforeach
@@ -20,10 +20,10 @@
       </div>
   <div class="form-group">
     <label for="image">Upload an Image</label>
-    <input type="file" class="form-control" id="image" name='image'>
+    <input type="file" class="form-control" id="image" name='image' required>
   </div> 
   <div class="form-group">
-    <label for="text">Details</label>
+    <label for="text">Description</label>
     <input type="text" class="form-control" id="text" name="details" placeholder="Project details">
   </div>
 

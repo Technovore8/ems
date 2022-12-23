@@ -10,6 +10,8 @@
                     <th scope="col">E-mail</th>
                     <th scope="col">Subjectt</th>
                     <th scope="col">Message</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -20,8 +22,8 @@
                         <td>{{ $data->email }}</td>
                         <td>{{ $data->subject }}</td>
                         <td>{{ $data->message }}</td>
+                        <td>{{ $data->created_at }}</td>
                         <td>
-                            <a href=""><button type="button" class="btn btn-success">View</button></a>
                             <a href="{{ route('message.delete', $data->id) }}"><button type="button"
                                     class="btn btn-danger" onclick="return confirm('Are you sure you want to delete?')">>Delete</button></a>
                         </td>
