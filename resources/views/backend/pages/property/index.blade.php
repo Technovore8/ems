@@ -11,7 +11,7 @@
                     <th scope="col">location</th>
                     <th scope="col">project</th>
                     <th scope="col">Details</th>
-                    <th scope="col">Image</th>
+                    <th scope="col">Land Image</th>
                     <th scope="col">NID</th>
                     <th scope="col">Khotian/porcha</th>
                     <th scope="col">Land doc./Dolil</th>

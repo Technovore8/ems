@@ -20,7 +20,7 @@ class SellPropertiesController extends Controller
 
     public function sellpost(Request $request)
     {
-        //dd($request->all());
+       
         $filename = null;
         if ($request->hasfile('image')) {
             $file = $request->file('image');

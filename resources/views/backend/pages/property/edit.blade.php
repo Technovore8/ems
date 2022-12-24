@@ -34,7 +34,7 @@
   <input type="text" class="form-control" id="price" name='price' placeholder="Enter project details"value="{{old('details',$property->price)}}">
   </div> 
     <div class="form-group">
-        <label for="image">Upload an Image</label>
+        <label for="image">Upload Land Image</label>
         <input type="file" class="form-control" id="image" name='image'>
     </div> 
     <div class="form-group">

@@ -55,7 +55,7 @@
                 <div class="img overlay" style="background-image: url('images/hero_bg_1.jpg')"></div>
             </div>
 
-            <div class="container">
+            {{-- <div class="container">
                 <div class="row justify-content-center align-items-center">
                     <div class="col-lg-9 text-center">
                         <h1 class="heading" data-aos="fade-up">
@@ -68,7 +68,7 @@
                         </form>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     @endif
 

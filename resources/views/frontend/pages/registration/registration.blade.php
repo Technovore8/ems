@@ -22,7 +22,7 @@
                                 @csrf
                                 <div class="form-outline mb-2">
                                     <label class="form-label" for="form3Example1q">Name</label>
-                                    <input type="text" name="name" id="form3Example1q" class="form-control" />
+                                    <input type="text" name="name" id="form3Example1q" class="form-control" required/>
                                 </div>
 
                                 <div class="row">
@@ -54,8 +54,8 @@
                                         <div class="mb-3">
                                             <label>Choose An Option</label>
                                             <select name="role" id="" class="form-control">
-                                                <option value="seller">Seller</option>
-                                                <option value="buyer">Buyer</option>
+                                                <option value="seller">Sell a land</option>
+                                                <option value="buyer">Buy a land</option>
                                             </select>
                                         </div>
                                         <div class="row">
