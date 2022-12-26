@@ -13,6 +13,12 @@
             </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="{{route('report')}}">
+              <i class="icon-grid menu-icon"></i>
+              <span class="menu-title">Report</span>
+            </a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="{{route('backend.property.index')}}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
               <span class="menu-title">Properties</span>

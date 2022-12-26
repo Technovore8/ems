@@ -45,7 +45,7 @@ class SellPropertiesController extends Controller
             $dolilfilename = date('Ymdhis') . '.' . $file->getClientOriginalExtension();
             $file->storeAs('/uploads', $dolilfilename);
         }
-        try {
+  
             Property::create([
                 'name' => $request->name,
                 'location_id' => $request->location_id,
@@ -56,13 +56,12 @@ class SellPropertiesController extends Controller
                 'image' => $filename,
                 'nid_image' => $nidfilename,
                 'khotian_image' => $khotianfilename,
-                'dolil' => $dolilfilename
+                'dolil' => $dolilfilename,
+                'user_id' => auth()->user()->id
             ]);
 
             Toastr::success('Your property added for sale', 'success');
-        } catch (Exception $err) {
-            dd($err);
-        }
+        
         return redirect()->route('home');
     }
 }

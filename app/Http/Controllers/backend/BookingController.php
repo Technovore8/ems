@@ -55,9 +55,11 @@ class BookingController extends Controller
 
     public function update(Request $request, $id)
     {
+        // dd($request->all());
         $request->validate([
             'user_id' => 'required',
-            'property_id' => 'required'
+            'property_id' => 'required',
+            'status' => 'required'
         ]);
 
         $booking = Booking::find($id);

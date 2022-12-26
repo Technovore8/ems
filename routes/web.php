@@ -26,6 +26,7 @@ use App\Http\Controllers\backend\ScheduleController;
 use App\Http\Controllers\backend\HomeController as backendHomecontroller;
 use App\Http\Controllers\ProjectController as ControllersProjectController;
 use App\Http\Controllers\backend\LocationController as backendLocationController;
+use App\Http\Controllers\ReportController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,6 +57,7 @@ Route::post('/registration-post',[AuthController::class,'store'])->name('reg.pos
 Route::get('/user-profile',[AuthController::class,'profile'])->name('user.profile');
 Route::get('/profile-edit/{id}',[AuthController::class,'edit'])->name('profile.edit');
 Route::put('/update-profile/{id}',[AuthController::class,'update'])->name('profile.update');
+Route::put('/view-profile/{id}',[AuthController::class,'view'])->name('profile.view');
 
 //properties
 Route::get('/properties',[PropertiesController::class,'properties'])->name('properties');
@@ -157,5 +159,12 @@ Route::get('/Property-delete/{id}',[PropertyController::class,'delete'])->name('
 
 #contactus
 Route::get('/contact-index',[ContactController::class,'index'])->name('backend.contact.index');
+
+
+
+
+#report
+Route::get('/report-generate',[ReportController::class,'index'])->name('report');
+Route::post('/report-generate-submit',[ReportController::class,'index'])->name('report.generated');
 
 });

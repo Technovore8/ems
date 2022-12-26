@@ -23,4 +23,39 @@
                 </div> 
             </div>
 </div>
+<div class="container">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Property id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Location</th>
+            <th scope="col">Project</th>
+            <th scope="col">Details</th>
+            <th scope="col">Phone</th>
+            {{-- <th scope="col">Action</th> --}}
+            
+        
+          </tr>
+        </thead>
+        <tbody>
+            @if ($listedProperties)
+                @foreach ($listedProperties as $item)
+                    
+                <tr>
+                  <th scope="col">{{$item->id}}</th>
+                  <th scope="col">{{$item->name}}</th>
+                  <th scope="col">{{$item->location_id}}</th>
+                  <th scope="col">{{$item->project_id}}</th>
+                  <th scope="col">{{$item->details}}</th>
+                  <th scope="col">{{$item->phone}}</th>
+                  {{-- <td>
+                  <a href="{{route('user.profile',$item->id)}}"><button type="button" class="btn btn-danger">Delete</button></a>
+                  </td> --}}
+                </tr>
+                @endforeach
+            @endif
+        </tbody>
+      </table>
+</div>
 @endsection

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Property;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
@@ -84,8 +85,10 @@ class AuthController extends Controller
 
     #user profile
     public function profile(){
-        
-        return view('frontend.pages.registration.profile');
+    
+            $listedProperties = Property::where('user_id',auth()->user()->id)->get();
+            return view('frontend.pages.registration.profile',compact('listedProperties'));
+
     }
 
     public function edit($id){
@@ -127,5 +130,8 @@ class AuthController extends Controller
         return redirect()->route('user.profile');
 
 
+    }
+    public function view($id){
+       
     }
 }

@@ -2,7 +2,7 @@
 @section('content')
 
 <h1>Update an user</h1>
-<form action="{{route('backend.user.update',$booking->id)}}" method="post" enctype="multipart/form-data">
+<form action="{{route('backend.booking.update',$booking->id)}}" method="post" enctype="multipart/form-data">
   @method('put')
   @csrf
     <div class="form-group">
@@ -18,6 +18,7 @@
       <select name="status" id="status">
         <option value="pending">Pending</option>
         <option value="approved">Approved</option>
+        <option value="sold">Sold</option>
         <option value="reject">Reject</option>
       </select>
     </div>
