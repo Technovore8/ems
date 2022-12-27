@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Booking;
 use App\Models\Property;
-
+use App\Models\Remarks;
 use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
 use Exception;
@@ -27,5 +27,18 @@ class BookController extends Controller
             dd($err);
         }
         return to_route('home');
+    }
+    public function remarks(Request $request,$id){
+        // dd($request->all());
+        $property=Property::find($id);
+
+         Remarks::create([
+            'user_id'=>auth()->user()->id,
+            'property_id'=>$property->id,
+            'remarks'=>$request->remarks
+         ]);
+
+         return redirect()->back();
+
     }
 }

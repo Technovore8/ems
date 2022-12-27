@@ -21,12 +21,25 @@
                     </div>
                 </div>
                 <!-- .item -->
-
-
             </div>
-
         </div>
     </div>
-    <script>
-    </script>
+    <div>
+        @foreach ($remarks as $data)
+        <span>{{ $data->UserRelation->name }}</span>
+        <span>{{ $data->PropertyRelation->name }}</span>
+        <h2>{{ $data->remarks }}</h2>
+            
+        @endforeach
+    </div>
+    <div class="m-5">
+        <form action="{{ route('property.remarks',$property->id) }}" method="post">
+            @csrf
+            <h1>Please write about your visit</h1>
+            <textarea name="remarks" id="remarks" cols="90" rows="10"></textarea>
+            <div>
+                <button type="submit" class="btn btn-success"> Submit</button>
+            </div>
+        </form>
+    </div>
 @endsection

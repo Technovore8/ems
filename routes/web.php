@@ -86,7 +86,8 @@ Route::get('/message/delete/{id}',[ContactusController::class,'delete'])->name('
 //search page
 Route::get('/search',[SearchController::class,'search'])->name('search');
 
-
+# remarks
+Route::post('/remarks-store/{id}',[BookController::class,'remarks'])->name('property.remarks');
 
 
 
